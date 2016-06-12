@@ -11,22 +11,22 @@
 #define BUTTON_STATE_DOWN   HIGH
 
 class Button {
-  public:
-    Button() {};
+	public:
+		Button() {};
 
-    void setState(uint8_t state);
-    uint8_t getState();
-    uint8_t hasChanged();
+		void setState(uint8_t state);
+		uint8_t getState();
+		uint8_t hasChanged();
 
-    bool isDown();
-    bool isUp();
+		bool isDown();
+		bool isUp();
   
-  private:
-    uint8_t _buttonState = LOW;
-    uint8_t _lastButtonState = LOW;
-    bool _hasChanged = false;
-    unsigned long _lastDebounceTime = 0;
-    unsigned long _lastChangeTime = 0;
+	private:
+		uint8_t _buttonState = LOW;
+		uint8_t _lastButtonState = LOW;
+		bool _hasChanged = false;
+		unsigned long _lastDebounceTime = 0;
+		unsigned long _lastChangeTime = 0;
 };
 
 #endif // __BUTTON_H__

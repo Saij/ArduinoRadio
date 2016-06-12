@@ -5,9 +5,8 @@
 #define PIN_POWER A3
 
 void PowerHandler::setupPower() {
-  debugPrintf(F("Initialize Power"));
+  	debugPrintf(F("Initialize Power"));
   
-  pinMode(PIN_POWER, OUTPUT);
-  digitalWrite(PIN_POWER, HIGH);
+  	pinMode(PIN_POWER, OUTPUT);
+  	digitalWrite(PIN_POWER, HIGH);
 }
-

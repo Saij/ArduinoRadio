@@ -15,16 +15,16 @@
 #define BUTTON_STORE6 7
 
 class ButtonHandler {
-  public:
-    static void setupButtons();
-    static void updateButtons();
-    static Button* getButton(uint8_t btnNum);
+  	public:
+    	static void setupButtons();
+    	static void updateButtons();
+    	static Button* getButton(uint8_t btnNum);
 
-  private:
-    ButtonHandler() {};
-    ~ButtonHandler() {};
+  	private:
+	    ButtonHandler() {};
+    	~ButtonHandler() {};
 
-    static Button _buttons[];
+    	static Button _buttons[];
 };
 
 #endif // __BUTTON_HANDLER_H__

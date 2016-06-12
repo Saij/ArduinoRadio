@@ -2,13 +2,13 @@
 #define __POWER_HANDLER_H__
 
 class PowerHandler {
-  public:
-    static void setupPower();
+  	public:
+    	static void setupPower();
 
-  private:
-    PowerHandler() {};
+  	private:
+    	PowerHandler() {};
 
-    bool _powerState = true;
+    	bool _powerState = true;
 };
 
 #endif // __POWER_HANDLER_H__

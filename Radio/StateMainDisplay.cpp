@@ -3,11 +3,10 @@
 #include "Debug.h"
 
 void StateMainDisplay::onEnter() {
-  debugPrintf(F("Entering Main Display State"));
-  DisplayHandler::clearDisplay();
+	debugPrintf(F("Entering Main Display State"));
+	DisplayHandler::clearDisplay();
 }
 
 void StateMainDisplay::update() {
-  
+	
 }
-

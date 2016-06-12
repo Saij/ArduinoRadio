@@ -5,16 +5,16 @@
 #include <LiquidCrystal.h>
 
 class DisplayHandler {
-  public:
-    static void setupDisplay();
-    static void setBrightness(uint8_t brightness);
-    static uint8_t getBrightness();
-    static void clearDisplay();
+  	public:
+	    static void setupDisplay();
+    	static void setBrightness(uint8_t brightness);
+    	static uint8_t getBrightness();
+    	static void clearDisplay();
 
-  private:
-    DisplayHandler() {};
+  	private:
+    	DisplayHandler() {};
     
-    static LiquidCrystal _display;
+    	static LiquidCrystal _display;
 };
 
 #endif // __DISPLAY_HANDLER_H__

@@ -4,18 +4,20 @@
 #include "PowerHandler.h"
 #include "ButtonHandler.h"
 #include "StateHandler.h"
+#include "TunerHandler.h"
 
 void setup() {
-  setupDebug();
+  	setupDebug();
 
-  SettingsHandler::setupSettings();
-  PowerHandler::setupPower();
-  DisplayHandler::setupDisplay();
-  ButtonHandler::setupButtons();
-  StateHandler::setupStates();
+  	SettingsHandler::setupSettings();
+  	PowerHandler::setupPower();
+  	DisplayHandler::setupDisplay();
+  	TunerHandler::setupTuner();
+  	ButtonHandler::setupButtons();
+  	StateHandler::setupStates();
 }
 
 void loop() { 
-  ButtonHandler::updateButtons();
-  StateHandler::updateStates();
+  	ButtonHandler::updateButtons();
+  	StateHandler::updateStates();
 }

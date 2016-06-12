@@ -13,22 +13,22 @@
 #define NUM_PRESETS 6
 
 typedef struct {
-  uint32_t version;
-  uint8_t brightness;
-  uint16_t presets[NUM_PRESETS];
+	uint32_t version;
+	uint8_t brightness;
+	uint16_t presets[NUM_PRESETS];
 } Settings;
 
 class SettingsHandler {
-  public:
-    static void setupSettings();
-    static bool loadSettings();
-    static void saveSettings();
-    static Settings* getSettings();
+	public:
+		static void setupSettings();
+		static bool loadSettings();
+		static void saveSettings();
+		static Settings* getSettings();
 
-  private:
-    SettingsHandler() {};
-    static Settings _settings;
-    static int _address;
+	private:
+		SettingsHandler() {};
+		static Settings _settings;
+		static int _address;
 };
 
 #endif // __SETTINGS_HANDLER_H__

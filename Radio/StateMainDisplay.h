@@ -5,9 +5,9 @@
 #include "Debug.h"
 
 class StateMainDisplay : public State {
-  public:
-    void onEnter();
-    void update();
+	public:
+		void onEnter();
+		void update();
 };
 
 #endif // __STATE_MAIN_DISPLAY_H__

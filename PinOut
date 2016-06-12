@@ -1,0 +1,25 @@
+Display
+A1, 9, 8, 7, 6, 10
+
+Radio
+Standard
+
+D00 => Seriell
+D01 => Seriell
+D02 => RotEnc Switch
+D03 => RotEnc Clk
+D04 => RotEnc Dt
+D05 => Helligkeit
+D06 => Display
+D07 => Display
+D08 => Display
+D09 => Display
+D10 => Display
+D11 => DataIn Button
+D12 => CS Buttons
+D13 => CLK Buttons
+A01 => Display
+A02 => PL Buttons
+A03 => Powerstate
+A04 => Radio
+A05 => Radio

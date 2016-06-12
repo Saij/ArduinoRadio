@@ -21,7 +21,7 @@ class StateHandler {
   private:
     StateHandler() {};
 
-    static State _states[];
+    static State* _states[];
     static uint8_t _currentState;
     static uint8_t _oldState;
 };

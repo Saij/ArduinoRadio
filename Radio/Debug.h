@@ -1,18 +1,23 @@
+// Enable debug system
+// Comment to disable debug system
+#define DEBUG
+
 #ifdef DEBUG
 
-void DEBUG_SETUP() {
-  Serial.begin(38400);
-  Serial.println(F("Radio - Debug"));
-  Serial.println(F("-------------"));
-}
+#include <stdarg.h>
+#define PRINTF_BUF 80
 
-#define DEBUG_PRINT(str)    Serial.print(str);
-#define DEBUG_PRINTLN(str)  Serial.println(str);
+void setupDebug();
 
-#else
+void debugPrintf(const char *format, ...);
 
-#define DEBUG_SETUP()
-#define DEBUG_PRINT(str)
-#define DEBUG_PRINTLN(str)
+#ifdef F // check to see if F() macro is available
+void debugPrintf(const __FlashStringHelper *format, ...);
+#endif // F
+
+#else // DEBUG
+
+#define setupDebug()
+#define debugPrintf(format, ...)
 
 #endif // DEBUG

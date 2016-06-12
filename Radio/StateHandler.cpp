@@ -1,17 +1,18 @@
 #include "StateHandler.h"
+#include "Debug.h"
 
 uint8_t StateHandler::_currentState = STATE_MAIN_DISPLAY;
 uint8_t StateHandler::_oldState = STATE_MAIN_DISPLAY;
 
-State StateHandler::_states[NUM_STATES] = {
-  StateMainDisplay()
+State* StateHandler::_states[NUM_STATES] = {
+  new StateMainDisplay()
 };
 
 void StateHandler::setupStates() {
   StateHandler::getCurrentState()->onEnter();
 }
 
-void StateHandler::updateStates() {
+void StateHandler::updateStates() { 
   if (StateHandler::_currentState != StateHandler::_oldState) {
     // Old State => Exit
     StateHandler::getState(StateHandler::_oldState)->onExit();
@@ -29,7 +30,7 @@ void StateHandler::changeState(uint8_t newState) {
 }
 
 State* StateHandler::getState(uint8_t stateNum) {
-  return &StateHandler::_states[constrain(stateNum, 0, NUM_STATES - 1)];
+  return StateHandler::_states[constrain(stateNum, 0, NUM_STATES - 1)];
 }
 
 State* StateHandler::getCurrentState() {

@@ -9,6 +9,8 @@ State* StateHandler::_states[NUM_STATES] = {
 };
 
 void StateHandler::setupStates() {
+  debugPrintf(F("Initialize States"));
+  
   StateHandler::getCurrentState()->onEnter();
 }
 

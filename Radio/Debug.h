@@ -4,6 +4,7 @@
 
 #ifdef DEBUG
 
+#include <Arduino.h>
 #include <stdarg.h>
 #define PRINTF_BUF 80
 

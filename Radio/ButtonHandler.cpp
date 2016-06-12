@@ -1,4 +1,5 @@
 #include "ButtonHandler.h"
+#include "Debug.h"
 
 #define PIN_BTN_DATAIN    11
 #define PIN_BTN_CLKEN     12
@@ -12,6 +13,8 @@
 Button ButtonHandler::_buttons[NUM_BUTTONS];
 
 void ButtonHandler::setupButtons() {
+  debugPrintf(F("Initialize Buttons"));
+  
   pinMode(PIN_BTN_PLOAD, OUTPUT);
   pinMode(PIN_BTN_CLKEN, OUTPUT);
   pinMode(PIN_BTN_CLK, OUTPUT);

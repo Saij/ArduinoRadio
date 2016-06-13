@@ -8,7 +8,7 @@ typedef uint16_t RADIO_FREQ;
 class TunerHandler {
 	public:
 		static void setupTuner();
-		static void TunerHandler::setFrequency(RADIO_FREQ newFreq);
+		static void setFrequency(RADIO_FREQ newFreq);
 		
 	private:
 		TunerHandler() {};

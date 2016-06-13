@@ -78,7 +78,7 @@
 					"name": "Update platforms and libraries"
 				}
 			],
-			"working_dir": "${project_path:${folder}}/firmware",
+			"working_dir": "${project_path:${folder}}",
 			"selector": "source.c, source.c++, source.cpp",
 		}
 	],

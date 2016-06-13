@@ -169,20 +169,20 @@
 			],
 			[
 				"PlatformIO",
-				"Clean"
+				"Build"
 			]
 		]
 	],
-	"build_varint": "",
+	"build_varint": "Build",
 	"command_palette":
 	{
 		"height": 392.0,
-		"last_filter": "",
+		"last_filter": "Package Control: ",
 		"selected_items":
 		[
 			[
 				"Package Control: ",
-				"Package Control: Install Package"
+				"Package Control: Remove Package"
 			]
 		],
 		"width": 448.0
@@ -206,6 +206,14 @@
 	},
 	"file_history":
 	[
+		"/D/Google Drive/Projekte/ArduinoRadio/firmware/src/ButtonHandler.h",
+		"/D/Google Drive/Projekte/ArduinoRadio/firmware/src/main.cpp",
+		"/D/Google Drive/Projekte/ArduinoRadio/firmware/src/ButtonHandler.cpp",
+		"/D/Google Drive/Projekte/ArduinoRadio/firmware/src/DisplayHandler.h",
+		"/D/Google Drive/Projekte/ArduinoRadio/firmware/src/DisplayHandler.cpp",
+		"/D/Google Drive/Projekte/ArduinoRadio/ArduinoRadio.sublime-project",
+		"/D/Google Drive/Projekte/ArduinoRadio/firmware/src/Radio.ino",
+		"/D/Google Drive/Projekte/ArduinoRadio/firmware/platformio.ini",
 		"/D/Google Drive/Projekte/ArduinoRadio/firmware/platformio.sublime-project",
 		"/D/Google Drive/Projekte/ArduinoRadio/Radio/ButtonHandler.cpp",
 		"/D/Google Drive/Projekte/ArduinoRadio/Radio/ButtonHandler.h",
@@ -325,15 +333,7 @@
 		"/Z/public_html/asics/wp-content/themes/ape/public/js/ape/Team/Filter.js",
 		"/Z/public_html/asics/wp-content/themes/ape/application/config/base.json",
 		"/Z/public_html/asics/wp-content/themes/ape/application/views/Team/List/Body.phtml",
-		"/Z/public_html/asics/wp-includes/query.php",
-		"/Z/public_html/asics/wp-includes/media.php",
-		"/Z/public_html/asics/wp-content/themes/ape/application/config/templates/team-member-list.json",
-		"/Z/public_html/asics/wp-content/themes/ape/application/views/List/Generic/BlogList.phtml",
-		"/Z/public_html/asics/wp-content/themes/ape/application/elements/List/GenericElement.php",
-		"/Z/public_html/asics/wp-content/themes/ape/application/config/elements/list.json",
-		"/Z/public_html/asics/wp-content/themes/ape/public/workfiles/includes/team_blog_list.php",
-		"/Z/public_html/asics/wp-content/themes/ape/public/js/main.js",
-		"/Z/public_html/asics/wp-content/themes/ape/application/elements/Inline/ButtonElement.php"
+		"/Z/public_html/asics/wp-includes/query.php"
 	],
 	"find":
 	{
@@ -361,6 +361,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"this->",
 			"ButtonHandler",
 			"_registers",
 			"RADIO_FREQ",
@@ -539,11 +540,15 @@
 	},
 	"output.exec":
 	{
-		"height": 100.0
+		"height": 168.0
 	},
 	"output.find_results":
 	{
 		"height": 0.0
+	},
+	"output.git":
+	{
+		"height": 100.0
 	},
 	"pinned_build_system": "PlatformIO",
 	"replace":

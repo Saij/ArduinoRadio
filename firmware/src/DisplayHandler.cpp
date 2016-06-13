@@ -36,4 +36,4 @@ byte DisplayHandler::getBrightness() {
 
 void DisplayHandler::clearDisplay() {
   	DisplayHandler::_display.clear();
-}
+} 

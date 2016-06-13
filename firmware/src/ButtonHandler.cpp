@@ -12,7 +12,7 @@
 
 Button ButtonHandler::_buttons[NUM_BUTTONS];
 
-void ButtonHandler::setupButtons() {
+void ButtonHandler::setup() {
 	debugPrintf(F("Initialize Buttons"));
   
 	pinMode(PIN_BTN_PLOAD, OUTPUT);
@@ -24,7 +24,7 @@ void ButtonHandler::setupButtons() {
 	digitalWrite(PIN_BTN_PLOAD, HIGH);
 }
 
-void ButtonHandler::updateButtons() {
+void ButtonHandler::update() {
 	// Trigger a parallel load to latch the state of the data lines
 	digitalWrite(PIN_BTN_CLKEN, HIGH);
 	digitalWrite(PIN_BTN_PLOAD, LOW);

@@ -1,0 +1,597 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Tuner",
+				"TunerHandler"
+			],
+			[
+				"RADIO_REG_VO",
+				"RADIO_REG_VOL_INT"
+			],
+			[
+				"beitra",
+				"beitrag_ids"
+			],
+			[
+				"curre",
+				"currentContainerIsCompanyArticle"
+			],
+			[
+				"globa",
+				"globalMergeVars"
+			],
+			[
+				"email",
+				"emailFields"
+			],
+			[
+				"emai",
+				"emailFields"
+			],
+			[
+				"_Email",
+				"_EmailText"
+			],
+			[
+				"ema",
+				"emailFields"
+			],
+			[
+				"wid",
+				"widthChange"
+			],
+			[
+				"facebookRe",
+				"facebookReloadThreshold"
+			],
+			[
+				"mime",
+				"mimeType"
+			],
+			[
+				"valid",
+				"validatorConfig"
+			],
+			[
+				"error",
+				"errorFields"
+			],
+			[
+				"first",
+				"firstErrorPage"
+			],
+			[
+				"que",
+				"question-sentence"
+			],
+			[
+				"ques",
+				"question-why-asics"
+			],
+			[
+				"question",
+				"question-why-you"
+			],
+			[
+				"valida",
+				"validateFunction"
+			],
+			[
+				"_init",
+				"_initFilters"
+			],
+			[
+				"soc",
+				"socialFields"
+			],
+			[
+				"auth",
+				"authorPosts"
+			],
+			[
+				"filter",
+				"filterField"
+			],
+			[
+				"fi",
+				"filterField"
+			],
+			[
+				"team-membe",
+				"team-member-list"
+			],
+			[
+				"short",
+				"shortcodes"
+			],
+			[
+				"sh",
+				"shortcode"
+			],
+			[
+				"autho",
+				"author-relation"
+			],
+			[
+				"exec",
+				"executeWpQuery"
+			],
+			[
+				"renderElement",
+				"renderElementById"
+			],
+			[
+				"proc",
+				"processed_inhalte"
+			],
+			[
+				"pro",
+				"processed_inhalte"
+			]
+		]
+	},
+	"build_system": "PlatformIO",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"PlatformIO",
+					""
+				],
+				[
+					"PlatformIO",
+					"Build"
+				],
+				[
+					"PlatformIO",
+					"Clean"
+				],
+				[
+					"PlatformIO",
+					"Upload"
+				],
+				[
+					"PlatformIO",
+					"Upload using Programmer"
+				],
+				[
+					"PlatformIO",
+					"Upload SPIFFS image"
+				],
+				[
+					"PlatformIO",
+					"Update platforms and libraries"
+				]
+			],
+			[
+				"PlatformIO",
+				"Clean"
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 448.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"platformio init --ide sublimetext"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/D/Google Drive/Projekte/ArduinoRadio/firmware/platformio.sublime-project",
+		"/D/Google Drive/Projekte/ArduinoRadio/Radio/ButtonHandler.cpp",
+		"/D/Google Drive/Projekte/ArduinoRadio/Radio/ButtonHandler.h",
+		"/C/Users/FRIEDR~1.VON/AppData/Local/Temp/Deviot/Radio/platformio.ini",
+		"/D/Google Drive/Projekte/ArduinoRadio/Radio/Debug.cpp",
+		"/D/Google Drive/Projekte/ArduinoRadio/Radio/Radio.ino",
+		"/D/Bilder/TEst/TEst.ino",
+		"/C/Users/friedrich.vonaffenfels/AppData/Roaming/Sublime Text 3/Packages/Deviot/Settings-Default/Deviot Preferences.sublime-settings",
+		"/D/Google Drive/Projekte/ArduinoRadio/Radio/SettingsHandler.cpp",
+		"/D/Google Drive/Projekte/ArduinoRadio/Radio/SettingsHandler.h",
+		"/D/Google Drive/Projekte/ArduinoRadio/Radio/State.h",
+		"/D/Google Drive/Projekte/ArduinoRadio/Radio/StateHandler.cpp",
+		"/D/Google Drive/Projekte/ArduinoRadio/Radio/StateHandler.h",
+		"/D/Google Drive/Projekte/ArduinoRadio/Radio/StateMainDisplay.cpp",
+		"/D/Google Drive/Projekte/ArduinoRadio/Radio/StateMainDisplay.h",
+		"/D/Google Drive/Projekte/ArduinoRadio/Radio/Button.cpp",
+		"/D/Google Drive/Projekte/ArduinoRadio/Radio/Button.h",
+		"/D/Google Drive/Projekte/ArduinoRadio/Radio/Debug.h",
+		"/D/Google Drive/Projekte/ArduinoRadio/Radio/DisplayHandler.cpp",
+		"/D/Google Drive/Projekte/ArduinoRadio/Radio/DisplayHandler.h",
+		"/D/Google Drive/Projekte/ArduinoRadio/Radio/PowerHandler.cpp",
+		"/D/Google Drive/Projekte/ArduinoRadio/Radio/PowerHandler.h",
+		"/D/Google Drive/Projekte/ArduinoRadio/Radio/Tuner.h",
+		"/D/Dokumente/Arduino/libraries/Radio-master/examples/SerialRadio/SerialRadio.ino",
+		"/D/Dokumente/Arduino/libraries/Radio-master/src/radio.h",
+		"/D/Dokumente/Arduino/libraries/Radio-master/src/RDA5807M.cpp",
+		"/D/SerialRadio/SerialRadio.ino",
+		"/D/Google Drive/Projekte/ArduinoRadio/PinOut",
+		"/D/Google Drive/Warhammer 40k/Fral.txt",
+		"/D/von Affenfels Projekte/IR157/system/perl/InterRed/Userlink.pm",
+		"/D/von Affenfels Projekte/quote_test.pl",
+		"/D/Arduino meets EA DOGM132-5 DOGM128-6 DOGL128-6/Arduino Library/DOG_7565R/logo_BLH.h",
+		"/D/Arduino meets EA DOGM132-5 DOGM128-6 DOGL128-6/Arduino Library/DOG_7565R/font_6x8.h",
+		"/D/Arduino meets EA DOGM132-5 DOGM128-6 DOGL128-6/Arduino Library/DOG_7565R/font_8x8.h",
+		"/D/Arduino meets EA DOGM132-5 DOGM128-6 DOGL128-6/Arduino Library/DOG_7565R/font_16x32nums.h",
+		"/D/Arduino meets EA DOGM132-5 DOGM128-6 DOGL128-6/Arduino Library/DOG_7565R/logo_small_BLH.h",
+		"/D/Arduino meets EA DOGM132-5 DOGM128-6 DOGL128-6/Arduino Library/DOG_7565R/font_8x16.h",
+		"/D/von Affenfels Projekte/IR157/system/perl/InterRed/DB/Tree.pm",
+		"/D/von Affenfels Projekte/IR157/system/perl/InterRed/DB.pm",
+		"/D/Downloads/wf_status.sql",
+		"/D/Downloads/wf_status_sprache.sql",
+		"/D/von Affenfels Projekte/IR157/system/perl/InterRed/Tree.pm",
+		"/D/Downloads/testtemplate.html",
+		"/D/Dokumente/id_rsa",
+		"/D/von Affenfels Projekte/IR157/system/templates/tree_tool.html",
+		"/D/von Affenfels Projekte/IR157/system/perl/tree_mod.pl",
+		"/D/von Affenfels Projekte/IR157/system/perl/InterRed/Config/Globals.pm",
+		"/D/von Affenfels Projekte/IR157/system/perl/InterRed/XML/Tree.pm",
+		"/Y/public_html/p3-new/trunk/application/elements/Project/Jobs/RequestElement.php",
+		"/Z/public_html/teac/trunk/application/elements/Project/Navigation/HeadElement.php",
+		"/Z/public_html/teac/trunk/application/library/Project/Controller/Action/Helper/Navigation.php",
+		"/Z/public_html/teac/trunk/application/Bootstrap.php",
+		"/Z/public_html/teac/trunk/interred/templates/navigation.html",
+		"/Z/public_html/teac/trunk/interred/templates/footer_navigation.html",
+		"/D/Downloads/Bewerbungen-Export (6).csv",
+		"/D/Downloads/Bewerbungen-Export (5).csv",
+		"/D/Downloads/Bewerbungen-Export (4).csv",
+		"/D/Downloads/Bewerbungen-Export (3).csv",
+		"/Z/public_html/asics/wp-content/themes/ape/application/elements/Team/FormularElement.php",
+		"/Z/public_html/asics/wp-content/plugins/wpmandrill/wpmandrill.php",
+		"/Z/public_html/asics/wp-content/plugins/wpmandrill/lib/mandrill.class.php",
+		"/Z/public_html/asics/wp-content/plugins/wp-all-import-pro/wp-all-import-pro.php",
+		"/Z/public_html/asics/wp-content/themes/ape/application/views/Team/Formular/Formular.phtml",
+		"/Z/public_html/asics/wp-includes/pluggable.php",
+		"/Z/public_html/asics/wp-content/themes/ape/application/library/Ape/View.php",
+		"/Z/public_html/asics/wp-content/themes/ape/application/library/Ape/Base.php",
+		"/Z/public_html/asics/wp-content/themes/ape/application/views/Structure/Html/Start.phtml",
+		"/Z/public_html/asics/wp-content/themes/ape/application/views/Team/Formular/Email.html.phtml",
+		"/Z/public_html/asics/wp-content/themes/ape/application/views/Team/Formular/Email.text.phtml",
+		"/Z/public_html/asics/Gruntfile.js",
+		"/D/Downloads/Bewerbungen-Export.csv",
+		"/D/Downloads/Bewerbungen-Export-2015-December-14-1202.csv",
+		"/D/Downloads/export-2-excel.1.0/export-2-excel/readme.txt",
+		"/Z/public_html/asics/wp-content/themes/ape/application/elements/Team/ListElement.php",
+		"/Z/public_html/asics/wp-content/themes/ape/application/elements/Teaser/InstagramElement.php",
+		"/D/Downloads/Selena.xml",
+		"/C/Users/friedrich/AppData/Roaming/Fantasy Grounds/characters/PFRPG/modulestate.xml",
+		"/C/Users/friedrich/AppData/Roaming/Fantasy Grounds/cache/Ponyfinder/usersettings/hotkeys_id-00009.xml",
+		"/Z/public_html/asics/wp-config/prod.config.php",
+		"/Z/public_html/asics/wp-content/themes/ape/application/elements/Inline/SliderElement.php",
+		"/Z/public_html/asics/wp-content/themes/ape/application/views/Detail/Detail/Static.phtml",
+		"/Z/public_html/asics/wp-content/themes/ape/public/js/ape/General.js",
+		"/Z/public_html/asics/wp-content/themes/ape/application/views/Teaser/Slider/Home.phtml",
+		"/Z/public_html/asics/wp-content/themes/ape/application/views/Teaser/Instagram/Home.phtml",
+		"/Z/public_html/asics/wp-content/themes/ape/application/views/Team/List/Filter.phtml",
+		"/Z/public_html/asics/wp-content/themes/ape/application/views/Team/Detail/Detail.phtml",
+		"/Z/public_html/asics/wp-content/themes/ape/application/views/Inline/Slider/Slider.phtml",
+		"/Z/public_html/asics/wp-content/themes/ape/application/views/Inline/Button/Button.phtml",
+		"/Z/public_html/asics/wp-content/themes/ape/application/views/Detail/Detail/BloggerOfTheDay.phtml",
+		"/Z/public_html/asics/wp-content/themes/ape/public/js/ape/Ad.js",
+		"/Z/public_html/ams/trunk/application/views/scripts/shared/AdsAndStats/GoogleAnalytics/GoogleAnalytics.phtml",
+		"/Z/public_html/asics/wp-content/themes/ape/application/views/Structure/Html/End.phtml",
+		"/Z/public_html/ams/trunk/public/js/elements/shared/AdElement/Ad.js",
+		"/Z/public_html/asics/wp-content/themes/ape/application/config/elements/ad.json",
+		"/Z/public_html/asics/wp-content/themes/ape/application/views/Ad/Ivw/Ivw.phtml",
+		"/Z/public_html/asics/wp-content/themes/ape/application/elements/Ad/IvwElement.php",
+		"/Z/public_html/asics/wp-content/themes/ape/application/layout/default.phtml",
+		"/Z/public_html/asics/wp-content/themes/ape/public/js/ape/Base/application.js",
+		"/Z/public_html/asics/wp-content/themes/ape/public/js/ape/Slider.js",
+		"/Z/public_html/ams/trunk/application/elements/shared/AdsAndStats/AdElement.php",
+		"/Z/public_html/ams/trunk/application/views/scripts/shared/AdsAndStats/Ad/Ivw.phtml",
+		"/Z/public_html/asics/wp-content/themes/ape/application/elements/Team/DetailElement.php",
+		"/Z/public_html/asics/wp-content/themes/ape/functions.php",
+		"/Z/public_html/asics/wp-content/themes/ape/application/elements/Detail/DetailElement.php",
+		"/Z/public_html/asics/wp-config/view.config.php",
+		"/Z/public_html/asics/wp-content/plugins/post-type-switcher/post-type-switcher.php",
+		"/Z/public_html/asics/wp-content/themes/ape/public/js/ape/Team/Formular.js",
+		"/Z/public_html/asics/wp-includes/functions.php",
+		"/Z/public_html/asics/wp-admin/includes/media.php",
+		"/Z/public_html/asics/wp-includes/post.php",
+		"/Z/public_html/asics/wp-content/themes/ape/application/views/Article/Detail/Static.phtml",
+		"/Z/public_html/asics/wp-content/themes/ape/application/config/templates/team-application.json",
+		"/Z/public_html/asics/wp-content/themes/ape/application/config/templates.json",
+		"/Z/public_html/asics/wp-content/themes/ape/application/config/elements/team.json",
+		"/Z/public_html/asics/wp-content/themes/ape/public/workfiles/forms.php",
+		"/Z/public_html/asics/wp-content/themes/ape/public/js/ape/InlineSlider.js",
+		"/Z/public_html/asics/wp-content/themes/ape/public/js/ape/Team/Filter.js",
+		"/Z/public_html/asics/wp-content/themes/ape/application/config/base.json",
+		"/Z/public_html/asics/wp-content/themes/ape/application/views/Team/List/Body.phtml",
+		"/Z/public_html/asics/wp-includes/query.php",
+		"/Z/public_html/asics/wp-includes/media.php",
+		"/Z/public_html/asics/wp-content/themes/ape/application/config/templates/team-member-list.json",
+		"/Z/public_html/asics/wp-content/themes/ape/application/views/List/Generic/BlogList.phtml",
+		"/Z/public_html/asics/wp-content/themes/ape/application/elements/List/GenericElement.php",
+		"/Z/public_html/asics/wp-content/themes/ape/application/config/elements/list.json",
+		"/Z/public_html/asics/wp-content/themes/ape/public/workfiles/includes/team_blog_list.php",
+		"/Z/public_html/asics/wp-content/themes/ape/public/js/main.js",
+		"/Z/public_html/asics/wp-content/themes/ape/application/elements/Inline/ButtonElement.php"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			"D:\\von Affenfels Projekte\\IR157\\system\\perl\\InterRed",
+			"D:\\von Affenfels Projekte\\IR157\\system\\perl",
+			"Y:\\public_html\\p3-new\\trunk\\application\\elements\\Project\\Index",
+			"Z:\\public_html\\teac\\trunk\\application\\configs",
+			"Z:\\public_html\\asics\\wp-content\\themes\\ape\\application\\views",
+			"Z:\\public_html\\asics\\wp-content\\themes\\ape\\application",
+			"Z:\\public_html\\asics\\wp-includes",
+			"Z:\\public_html\\asics\\wp-content\\plugins\\advanced-custom-fields-pro",
+			"Z:\\public_html\\asics\\wp-includes",
+			"Z:\\public_html\\asics\\wp-admin"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"ButtonHandler",
+			"_registers",
+			"RADIO_FREQ",
+			");\n",
+			";\n",
+			"\";\n",
+			"=\"",
+			"info_child",
+			"sysadm",
+			"treecode",
+			"change_tree_code",
+			"TREE_FLAG_EXTENSION",
+			"doSubmitWork",
+			"newEntry",
+			"Dump",
+			"executeTeaser",
+			"_initDefaultTeaser",
+			"Teaser_More_Headline",
+			".static.html",
+			"Senada",
+			"\\",
+			"var_dump",
+			"merge",
+			"messages_send_template",
+			"mc:edit",
+			"\\n",
+			"agreement",
+			".png",
+			"Schuh",
+			"data-tracking",
+			"),\n",
+			"analyticsIvwPixel",
+			"parseURL",
+			"getUrlPath",
+			"                    }\ngetUrlPath",
+			"author",
+			"author-relation",
+			"view",
+			"nounceValue",
+			"day",
+			"question",
+			"firstname",
+			"submit",
+			"this",
+			"self",
+			".ref",
+			".form",
+			"form",
+			"px",
+			"this.list",
+			"type=\"button\"",
+			"submit",
+			"why-asics",
+			"why-you",
+			"goals-2016",
+			"digest",
+			"why-trainer",
+			" req",
+			"-trainer",
+			"best-result",
+			"-background",
+			"background",
+			"Background",
+			"background",
+			"best-friend",
+			"form__field16",
+			"form__field15",
+			"pinterest",
+			"Pinterest",
+			"pinterest",
+			"Pinterest",
+			"pinterest",
+			"Pinterest",
+			"pinterest",
+			"Pinterest",
+			"pinterest",
+			"Pinterest",
+			"pinterest",
+			"facebook",
+			"Facebook",
+			"facebook",
+			"Facebook",
+			"facebook",
+			"portrait",
+			"this->",
+			"get_query_var",
+			"get_field_object",
+			"282",
+			"wp_update_attachment_metadata",
+			"Slider",
+			"BUTTON",
+			"ref",
+			"js",
+			"_baseConfig",
+			"../../",
+			"../..",
+			"_addContainerLine"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			" ",
+			"../"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.Deviot|Build1465825107.27775":
+	{
+		"height": 100.0
+	},
+	"output.Deviot|Build1465825130.797435":
+	{
+		"height": 100.0
+	},
+	"output.Deviot|Build1465825154.562299":
+	{
+		"height": 100.0
+	},
+	"output.Deviot|Build1465825192.520352":
+	{
+		"height": 100.0
+	},
+	"output.Deviot|Build1465825231.573057":
+	{
+		"height": 100.0
+	},
+	"output.Deviot|Build1465825243.342975":
+	{
+		"height": 100.0
+	},
+	"output.Deviot|Pio_Install1465825211.882964":
+	{
+		"height": 100.0
+	},
+	"output.Deviot|Upgrade1465825211.877961":
+	{
+		"height": 0.0
+	},
+	"output.exec":
+	{
+		"height": 100.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "PlatformIO",
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"D:\\von Affenfels Projekte\\ams.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 220.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

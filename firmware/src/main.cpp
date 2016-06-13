@@ -13,11 +13,11 @@ void setup() {
   	PowerHandler::setupPower();
   	DisplayHandler::setupDisplay();
   	TunerHandler::setupTuner();
-  	ButtonHandler::setupButtons();
+  	ButtonHandler::setup();
   	StateHandler::setupStates();
 }
 
 void loop() { 
-  	ButtonHandler::updateButtons();
+  	ButtonHandler::update();
   	StateHandler::updateStates();
 }

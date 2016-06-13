@@ -16,14 +16,11 @@
 
 class ButtonHandler {
   	public:
-    	static void setupButtons();
-    	static void updateButtons();
+    	static void setup();
+    	static void update();
     	static Button* getButton(uint8_t btnNum);
 
   	private:
-	    ButtonHandler() {};
-    	~ButtonHandler() {};
-
     	static Button _buttons[];
 };
 

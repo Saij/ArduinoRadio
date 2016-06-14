@@ -7,18 +7,19 @@
 #include "TunerHandler.h"
 
 void setup() {
-  	setupDebug();
+	setupDebug();
 
-  	SettingsHandler::setup();
-  	PowerHandler::setup();
-  	DisplayHandler::setup();
-  	TunerHandler::setup();
-  	ButtonHandler::setup();
-  	StateHandler::setup();
+	SettingsHandler::setup();
+	DisplayHandler::setup();
+	TunerHandler::setup();
+	ButtonHandler::setup();
+	StateHandler::setup();
+	PowerHandler::setup();
 }
 
 void loop() { 
 	SettingsHandler::update();
-  	ButtonHandler::update();
-  	StateHandler::update();
+	ButtonHandler::update();
+	TunerHandler::update();
+	StateHandler::update();
 }

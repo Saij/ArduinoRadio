@@ -5,14 +5,14 @@
 
 #define NUM_BUTTONS 8
 
-#define BUTTON_VOL_UP	0
-#define BUTTON_VOL_DOWN	1
-#define BUTTON_MENU   	2
-#define BUTTON_EXIT   	3
-#define BUTTON_STORE1 	4
-#define BUTTON_STORE2 	5
-#define BUTTON_STORE3 	6
-#define BUTTON_STORE4 	7
+#define BUTTON_VOL_UP		0
+#define BUTTON_VOL_DOWN		1
+#define BUTTON_FREQ_PREV   	2
+#define BUTTON_FREQ_NEXT  	3
+#define BUTTON_STORE1 		4
+#define BUTTON_STORE2 		5
+#define BUTTON_STORE3 		6
+#define BUTTON_STORE4 		7
 
 class ButtonHandler {
   	public:

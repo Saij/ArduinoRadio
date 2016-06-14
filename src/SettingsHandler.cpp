@@ -80,7 +80,7 @@ uint8_t SettingsHandler::getSoftmute() {
 }
 
 void SettingsHandler::setVolume(uint16_t newVolume) {
-	newVolume = constrain(newVolume, 0, 31);
+	newVolume = constrain(newVolume, 0, 30);
 	if (SettingsHandler::getVolume() != newVolume) {
 		// Update volume
 		SettingsHandler::_settings[REG_VOLUME] &= ~MASK_VOLUME;
@@ -127,7 +127,7 @@ void SettingsHandler::update() {
 }
 
 uint16_t SettingsHandler::_findNextWriteIndex() {	
-	debugPrintf(F("_findNextWriteIndex"));
+	debugPrintf(F("SettingsHandler::_findNextWriteIndex"));
 
 	uint16_t i;
 	for (i = SettingsHandler::_statusBufferAddress; i < (SettingsHandler::_bufferLen + SettingsHandler::_statusBufferAddress); i++) {
@@ -155,7 +155,7 @@ uint16_t SettingsHandler::_findNextWriteIndex() {
 }
 
 void SettingsHandler::_loadSettings() {
-	debugPrintf(F("_loadSettings"));
+	debugPrintf(F("SettingsHandler::_loadSettings"));
 
 	uint16_t writeOffset = SettingsHandler::_findNextWriteIndex() * SettingsHandler::_varSize;
 	uint16_t readAddress;
@@ -181,7 +181,7 @@ void SettingsHandler::_loadSettings() {
 }
 
 void SettingsHandler::_saveSettings() {
-	debugPrintf(F("_saveSettings"));
+	debugPrintf(F("SettingsHandler::_saveSettings"));
 
 	uint16_t writeOffset = SettingsHandler::_findNextWriteIndex();
 	debugPrintf(F("\tWrite Offset: %04X"), writeOffset);

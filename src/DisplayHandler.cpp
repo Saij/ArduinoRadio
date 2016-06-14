@@ -26,7 +26,6 @@ void DisplayHandler::setup() {
 }
 
 void DisplayHandler::setBrightness(uint8_t brightness) {
-	brightness = constrain(brightness, 0 ,255);
 	analogWrite(PIN_BRIGHTNESS, brightness);
 }
 

@@ -5,12 +5,25 @@
 #define NUM_REGISTERS 8
 
 #define MAGIC_CODE 0x4152
-#define VERSION 0x000A
+#define VERSION 0x000B
 
-#define MASK_BRIGHTNESS 0x00FF
 #define REG_BRIGHTNESS	0x02
+#define MASK_BRIGHTNESS 0x00FF
 
-#define SAVE_TIME_THRESHOLD 2000 // 2 Seconds
+#define REG_SOFTMUTE	0x02
+#define MASK_SOFTMUTE	0x0100
+#define POS_SOFTMUTE	0x08
+
+#define REG_VOLUME		0x02
+#define MASK_VOLUME		0x3E00
+#define POS_VOLUME		0x09
+
+#define REG_LAST_FREQ	0x03
+
+#define REG_PRESETS		0x04
+#define NUM_PRESETS		4
+
+#define SAVE_TIME_THRESHOLD 3000 // 3 Seconds
 
 uint8_t SettingsHandler::_varSize = ((NUM_REGISTERS << 1) | 1);
 uint8_t SettingsHandler::_bufferLen = (EEPROMSizeATmega328 / SettingsHandler::_varSize);
@@ -40,7 +53,6 @@ void SettingsHandler::setup() {
 }
 
 void SettingsHandler::setBrightness(uint8_t newBrightness) {
-	newBrightness = constrain(newBrightness, 0, 255);
 	if (SettingsHandler::getBrightness() != newBrightness) {
 		// Update brightness
 		SettingsHandler::_settings[REG_BRIGHTNESS] &= ~MASK_BRIGHTNESS;
@@ -51,6 +63,60 @@ void SettingsHandler::setBrightness(uint8_t newBrightness) {
 
 uint8_t SettingsHandler::getBrightness() {
 	return SettingsHandler::_settings[REG_BRIGHTNESS] & MASK_BRIGHTNESS;
+}
+
+void SettingsHandler::setSoftmute(uint8_t newSoftmute) {
+	newSoftmute = constrain(newSoftmute, 0, 1);
+	if (SettingsHandler::getSoftmute() != newSoftmute) {
+		// Update softmute
+		SettingsHandler::_settings[REG_SOFTMUTE] &= ~MASK_SOFTMUTE;
+		SettingsHandler::_settings[REG_SOFTMUTE] |= (newSoftmute << POS_SOFTMUTE);
+		SettingsHandler::_lastChange = millis();
+	}
+}
+
+uint8_t SettingsHandler::getSoftmute() {
+	return (SettingsHandler::_settings[REG_SOFTMUTE] & MASK_SOFTMUTE) >> POS_SOFTMUTE;
+}
+
+void SettingsHandler::setVolume(uint16_t newVolume) {
+	newVolume = constrain(newVolume, 0, 31);
+	if (SettingsHandler::getVolume() != newVolume) {
+		// Update volume
+		SettingsHandler::_settings[REG_VOLUME] &= ~MASK_VOLUME;
+		SettingsHandler::_settings[REG_VOLUME] |= (newVolume << POS_VOLUME);
+		SettingsHandler::_lastChange = millis();
+	}
+}
+
+uint16_t SettingsHandler::getVolume() {
+	return (SettingsHandler::_settings[REG_VOLUME] & MASK_VOLUME) >> POS_VOLUME;
+}
+
+void SettingsHandler::setLastFrequency(uint16_t newFrequency) {
+	if (SettingsHandler::_settings[REG_LAST_FREQ] != newFrequency) {
+		// Update last frequency
+		SettingsHandler::_settings[REG_LAST_FREQ] = newFrequency;
+		SettingsHandler::_lastChange = millis();
+	}
+}
+
+uint16_t SettingsHandler::getLastFrequency() {
+	return SettingsHandler::_settings[REG_LAST_FREQ];
+}
+
+void SettingsHandler::setPresetFrequency(uint8_t preset, uint16_t newFrequency) {
+	preset = constrain(preset, 1, NUM_PRESETS) - 1;
+	if (SettingsHandler::_settings[REG_PRESETS + preset] != newFrequency) {
+		// Update preset frequency
+		SettingsHandler::_settings[REG_PRESETS + preset] = newFrequency;
+		SettingsHandler::_lastChange = millis();
+	}
+}
+
+uint16_t SettingsHandler::getPresetFrequency(uint8_t preset) {
+	preset = constrain(preset, 1, NUM_PRESETS) - 1;
+	return SettingsHandler::_settings[REG_PRESETS + preset];
 }
 
 void SettingsHandler::update() {

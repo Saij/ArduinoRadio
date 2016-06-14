@@ -10,6 +10,14 @@ class SettingsHandler {
 
 		static void setBrightness(uint8_t newBrightness);
 		static uint8_t getBrightness();
+		static void setSoftmute(uint8_t softmute);
+		static uint8_t getSoftmute();
+		static void setVolume(uint16_t newVolume);
+		static uint16_t getVolume();
+		static void setLastFrequency(uint16_t newFrequency);
+		static uint16_t getLastFrequency();
+		static void setPresetFrequency(uint8_t preset, uint16_t newFrequency);
+		static uint16_t getPresetFrequency(uint8_t preset);
 
 	private:
 		static uint16_t _findNextWriteIndex();

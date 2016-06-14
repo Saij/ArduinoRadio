@@ -1,0 +1,25 @@
+Register 0x00
+Magic Code 0:15 (Always 0x4152)
+
+Register 0x01
+Version 0:15
+
+Register 0x02
+Brightness 	0:7
+Softmute 	  8
+Volume 		9:13
+
+Register 0x03
+Last Frequency 0:15
+
+Register 0x04
+Preset 1 0:15
+
+Register 0x05
+Preset 2 0:15
+
+Register 0x06
+Preset 3 0:15
+
+Register 0x07
+Preset 4 0:15

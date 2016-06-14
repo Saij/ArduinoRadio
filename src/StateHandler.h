@@ -12,15 +12,13 @@
 
 class StateHandler {
 	public:
-		static void setupStates();
-		static void updateStates();
+		static void setup();
+		static void update();
 		static void changeState(uint8_t newState);
 		static State* getState(uint8_t stateNum);
 		static State* getCurrentState();
 	
 	private:
-		StateHandler() {};
-
 		static State* _states[];
 		static uint8_t _currentState;
 		static uint8_t _oldState;

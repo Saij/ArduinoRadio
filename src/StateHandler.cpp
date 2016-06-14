@@ -8,13 +8,13 @@ State* StateHandler::_states[NUM_STATES] = {
 	new StateMainDisplay()
 };
 
-void StateHandler::setupStates() {
+void StateHandler::setup() {
 	debugPrintf(F("Initialize States"));
 	
 	StateHandler::getCurrentState()->onEnter();
 }
 
-void StateHandler::updateStates() { 
+void StateHandler::update() { 
 	if (StateHandler::_currentState != StateHandler::_oldState) {
 		// Old State => Exit
 		StateHandler::getState(StateHandler::_oldState)->onExit();

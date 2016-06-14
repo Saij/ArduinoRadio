@@ -9,15 +9,16 @@
 void setup() {
   	setupDebug();
 
-  	SettingsHandler::setupSettings();
-  	PowerHandler::setupPower();
-  	DisplayHandler::setupDisplay();
-  	TunerHandler::setupTuner();
+  	SettingsHandler::setup();
+  	PowerHandler::setup();
+  	DisplayHandler::setup();
+  	TunerHandler::setup();
   	ButtonHandler::setup();
-  	StateHandler::setupStates();
+  	StateHandler::setup();
 }
 
 void loop() { 
+	SettingsHandler::update();
   	ButtonHandler::update();
-  	StateHandler::updateStates();
+  	StateHandler::update();
 }

@@ -3,25 +3,22 @@
 
 #include <Arduino.h>
 
-typedef uint16_t RADIO_FREQ;
+#define FREQ_LIMIT_LOW 	8700
+#define FREQ_LIMIT_HIGH 10800
+#define FREQ_SPACING	10
 
 class TunerHandler {
 	public:
-		static void setupTuner();
-		static void setFrequency(RADIO_FREQ newFreq);
+		static void setup();
+		static void setFrequency(uint16_t newFreq);
+		static void setVolume(uint8_t newVolume);
 		
 	private:
-		TunerHandler() {};
 		static void _saveRegisters();
-		static void _saveRegister(uint8_t regNr);
+		static void _readRegisters();
 
 		// memory representation of the registers
 		static uint16_t _registers[];
-
-		// Frequency limits
-		static RADIO_FREQ _freqLow;
-  		static RADIO_FREQ _freqHigh;
-  		static RADIO_FREQ _freqSteps;
 };
 
 #endif // __TUNER_HANDLER_H__

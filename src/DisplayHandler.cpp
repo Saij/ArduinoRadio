@@ -16,22 +16,18 @@
 
 LiquidCrystal DisplayHandler::_display(PIN_DISPLAY_RS, PIN_DISPLAY_ENABLE, PIN_DISPLAY_DATA1, PIN_DISPLAY_DATA2, PIN_DISPLAY_DATA3, PIN_DISPLAY_DATA4);
 
-void DisplayHandler::setupDisplay() {
+void DisplayHandler::setup() {
   	debugPrintf(F("Initialize Display"));
 
   	pinMode(PIN_BRIGHTNESS, OUTPUT);
-  	analogWrite(PIN_BRIGHTNESS, DisplayHandler::getBrightness());
+  	analogWrite(PIN_BRIGHTNESS, SettingsHandler::getBrightness());
 
   	DisplayHandler::_display.begin(DISPLAY_COLS, DISPLAY_ROWS);
 }
 
-void DisplayHandler::setBrightness(byte brightness) {
-  	SettingsHandler::getSettings()->brightness = constrain(brightness, 0 ,255);
-  	SettingsHandler::saveSettings();
-}
-
-byte DisplayHandler::getBrightness() {
-  	return SettingsHandler::getSettings()->brightness;
+void DisplayHandler::setBrightness(uint8_t brightness) {
+	brightness = constrain(brightness, 0 ,255);
+	analogWrite(PIN_BRIGHTNESS, brightness);
 }
 
 void DisplayHandler::clearDisplay() {

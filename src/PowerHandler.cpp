@@ -4,7 +4,7 @@
 
 #define PIN_POWER A3
 
-void PowerHandler::setupPower() {
+void PowerHandler::setup() {
   	debugPrintf(F("Initialize Power"));
   
   	pinMode(PIN_POWER, OUTPUT);

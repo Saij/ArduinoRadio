@@ -4,12 +4,56 @@
 		"selected_items":
 		[
 			[
-				"Tuner",
-				"TunerHandler"
+				"Sett",
+				"SettingsHandler"
 			],
 			[
 				"RADIO_REG_VO",
-				"RADIO_REG_VOL_INT"
+				"RADIO_REG_VOL"
+			],
+			[
+				"RADIO",
+				"RADIO_REG_VOL"
+			],
+			[
+				"FRE",
+				"FREQ_LIMIT_LOW"
+			],
+			[
+				"I2",
+				"I2C_INDX_ADDRESS"
+			],
+			[
+				"I2C",
+				"I2C_SEQ_ADDRESS"
+			],
+			[
+				"be",
+				"beginTransmission"
+			],
+			[
+				"RADIO_REG_RA_ST",
+				"RADIO_REG_RA_STC"
+			],
+			[
+				"RADIO_REG_r7",
+				"RADIO_REG_R7_SOFTBLEND"
+			],
+			[
+				"RAD",
+				"RADIO_REG_R7"
+			],
+			[
+				"FREQ",
+				"FREQ_SPACING"
+			],
+			[
+				"RADI",
+				"RADIO_REG_R4"
+			],
+			[
+				"Tuner",
+				"TunerHandler"
 			],
 			[
 				"beitra",
@@ -169,11 +213,11 @@
 			],
 			[
 				"PlatformIO",
-				"Build"
+				"Upload"
 			]
 		]
 	],
-	"build_varint": "Build",
+	"build_varint": "",
 	"command_palette":
 	{
 		"height": 392.0,
@@ -206,6 +250,19 @@
 	},
 	"file_history":
 	[
+		"/D/Dokumente/Arduino/libraries/EEPROMEx/EEPROMVar.h",
+		"/D/Dokumente/Arduino/libraries/EEPROMEx/EEPROMex.h",
+		"/D/Dokumente/Arduino/libraries/EEPROMEx/EEPROMex.cpp",
+		"/D/Dokumente/Arduino/libraries/Radio-master/src/radio.cpp",
+		"/D/Google Drive/Projekte/ArduinoRadio/src/StateHandler.cpp",
+		"/D/Google Drive/Projekte/ArduinoRadio/src/StateHandler.h",
+		"/D/Google Drive/Projekte/ArduinoRadio/src/DisplayHandler.h",
+		"/D/Google Drive/Projekte/ArduinoRadio/src/PowerHandler.h",
+		"/D/Google Drive/Projekte/ArduinoRadio/src/TunerHandler.h",
+		"/D/Google Drive/Projekte/ArduinoRadio/src/main.cpp",
+		"/D/Google Drive/Projekte/ArduinoRadio/src/DisplayHandler.cpp",
+		"/D/Google Drive/Projekte/ArduinoRadio/src/SettingsHandler.cpp",
+		"/D/Google Drive/Projekte/ArduinoRadio/src/PowerHandler.cpp",
 		"/D/Google Drive/Projekte/ArduinoRadio/firmware/src/ButtonHandler.h",
 		"/D/Google Drive/Projekte/ArduinoRadio/firmware/src/main.cpp",
 		"/D/Google Drive/Projekte/ArduinoRadio/firmware/src/ButtonHandler.cpp",
@@ -320,20 +377,7 @@
 		"/Z/public_html/asics/wp-content/themes/ape/application/elements/Detail/DetailElement.php",
 		"/Z/public_html/asics/wp-config/view.config.php",
 		"/Z/public_html/asics/wp-content/plugins/post-type-switcher/post-type-switcher.php",
-		"/Z/public_html/asics/wp-content/themes/ape/public/js/ape/Team/Formular.js",
-		"/Z/public_html/asics/wp-includes/functions.php",
-		"/Z/public_html/asics/wp-admin/includes/media.php",
-		"/Z/public_html/asics/wp-includes/post.php",
-		"/Z/public_html/asics/wp-content/themes/ape/application/views/Article/Detail/Static.phtml",
-		"/Z/public_html/asics/wp-content/themes/ape/application/config/templates/team-application.json",
-		"/Z/public_html/asics/wp-content/themes/ape/application/config/templates.json",
-		"/Z/public_html/asics/wp-content/themes/ape/application/config/elements/team.json",
-		"/Z/public_html/asics/wp-content/themes/ape/public/workfiles/forms.php",
-		"/Z/public_html/asics/wp-content/themes/ape/public/js/ape/InlineSlider.js",
-		"/Z/public_html/asics/wp-content/themes/ape/public/js/ape/Team/Filter.js",
-		"/Z/public_html/asics/wp-content/themes/ape/application/config/base.json",
-		"/Z/public_html/asics/wp-content/themes/ape/application/views/Team/List/Body.phtml",
-		"/Z/public_html/asics/wp-includes/query.php"
+		"/Z/public_html/asics/wp-content/themes/ape/public/js/ape/Team/Formular.js"
 	],
 	"find":
 	{
@@ -361,6 +405,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"Settin",
+			"6",
+			"RADIO_REG_VOL",
+			"RADIO_FREQ",
 			"this->",
 			"ButtonHandler",
 			"_registers",

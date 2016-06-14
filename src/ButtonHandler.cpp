@@ -1,4 +1,5 @@
 #include "ButtonHandler.h"
+#include "Button.h"
 #include "Debug.h"
 
 #define PIN_BTN_DATAIN    11
@@ -37,6 +38,16 @@ void ButtonHandler::update() {
 		if (i < NUM_BUTTONS) {
 			ButtonHandler::getButton(NUM_BUTTONS - i - 1)->setState(digitalRead(PIN_BTN_DATAIN));
 		}
+
+		#ifdef DEBUG
+			if (ButtonHandler::getButton(NUM_BUTTONS - i - 1)->hasChanged() == BUTTON_CHANGED_UP) {
+				debugPrintf(F("Button %d released"), NUM_BUTTONS - i - 1);
+			}
+
+			if (ButtonHandler::getButton(NUM_BUTTONS - i - 1)->hasChanged() == BUTTON_CHANGED_DOWN) {
+				debugPrintf(F("Button %d pressed"), NUM_BUTTONS - i - 1);
+			}
+		#endif
 	
 		// Pulse the Clock (rising edge shifts the next bit).
 		digitalWrite(PIN_BTN_CLK, HIGH);

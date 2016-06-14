@@ -18,6 +18,7 @@ D10 => Display
 D11 => DataIn Button
 D12 => CS Buttons
 D13 => CLK Buttons
+A00 => Radio RST
 A01 => Display
 A02 => PL Buttons
 A03 => Powerstate

@@ -3,32 +3,24 @@
 
 #include <Arduino.h>
 
-// Config version code (magic code)
-// 0x41 => A (fixed)
-// 0x52 => R (fixed)
-// 0x00 => 0 (version)
-// 0x00 => 1 (version)
-#define CONFIG_VERSION 0x41520002
-
-#define NUM_PRESETS 6
-
-typedef struct {
-	uint32_t version;
-	uint8_t brightness;
-	uint16_t presets[NUM_PRESETS];
-} Settings;
-
 class SettingsHandler {
 	public:
-		static void setupSettings();
-		static bool loadSettings();
-		static void saveSettings();
-		static Settings* getSettings();
+		static void setup();
+		static void update();
+
+		static void setBrightness(uint8_t newBrightness);
+		static uint8_t getBrightness();
 
 	private:
-		SettingsHandler() {};
-		static Settings _settings;
-		static int _address;
+		static uint16_t _findNextWriteIndex();
+		static void _loadSettings();
+		static void _saveSettings();
+
+		static uint8_t _varSize;
+		static uint8_t _bufferLen;
+		static uint16_t _statusBufferAddress;
+		static uint16_t _settings[];
+		static unsigned long _lastChange;
 };
 
 #endif // __SETTINGS_HANDLER_H__

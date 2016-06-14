@@ -3,11 +3,9 @@
 
 class PowerHandler {
   	public:
-    	static void setupPower();
+    	static void setup();
 
   	private:
-    	PowerHandler() {};
-
     	bool _powerState = true;
 };
 

@@ -6,7 +6,7 @@ Standard
 
 D00 => Seriell
 D01 => Seriell
-D02 => RotEnc Switch
+D02 => AMP Mute
 D03 => RotEnc Clk
 D04 => RotEnc Dt
 D05 => Helligkeit

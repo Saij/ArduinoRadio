@@ -36,7 +36,7 @@ void ButtonHandler::update() {
 	// Loop to read each bit value from the serial out line of the SN74HC165N.
 	for (int i = 0; i < DATA_WIDTH; i++) {
 		if (i < NUM_BUTTONS) {
-			ButtonHandler::getButton(NUM_BUTTONS - i - 1)->setState(digitalRead(PIN_BTN_DATAIN));
+			ButtonHandler::getButton(NUM_BUTTONS - i - 1)->setState(!digitalRead(PIN_BTN_DATAIN));
 		}
 
 		#ifdef DEBUG

@@ -4,6 +4,110 @@
 		"selected_items":
 		[
 			[
+				"REG_SYSCFG2",
+				"REG_SYSCFG2_VOL_MASK"
+			],
+			[
+				"REG_SYSCFG",
+				"REG_SYSCFG2"
+			],
+			[
+				"REG_SYS",
+				"REG_SYSCFG3_VOLEXT"
+			],
+			[
+				"REG_SYSCFG3",
+				"REG_SYSCFG3"
+			],
+			[
+				"uint",
+				"uint8_t"
+			],
+			[
+				"REG_ST",
+				"REG_STATUSRSSI_STC"
+			],
+			[
+				"REG_CH",
+				"REG_CHANNEL"
+			],
+			[
+				"REG_PO",
+				"REG_POWERCFG_SEEK"
+			],
+			[
+				"REG_CHA",
+				"REG_CHANNEL_TUNE"
+			],
+			[
+				"REG_RE",
+				"REG_READCHAN_READCHAN_MASK"
+			],
+			[
+				"uin",
+				"uint16_t"
+			],
+			[
+				"REG_SYSCFG3_",
+				"REG_SYSCFG3_SKCNT_MASK"
+			],
+			[
+				"REG_SYSCFG2_",
+				"REG_SYSCFG2_SEEKTH_MASK"
+			],
+			[
+				"REG",
+				"REG_SYSCFG2"
+			],
+			[
+				"REG_SYSCF",
+				"REG_SYSCFG2_SPACE_100"
+			],
+			[
+				"REG_S",
+				"REG_SYSCFG2_SPACE_100"
+			],
+			[
+				"_read",
+				"_readRegisters"
+			],
+			[
+				"NUM",
+				"NUM_PRESET"
+			],
+			[
+				"un",
+				"uint16_t"
+			],
+			[
+				"Bu",
+				"BUTTON_CHANGED_UP"
+			],
+			[
+				"BUTT",
+				"BUTTON_CHANGED_UP"
+			],
+			[
+				"_s",
+				"_settings"
+			],
+			[
+				"EE",
+				"EEPROM"
+			],
+			[
+				"EEP",
+				"EEPROMex"
+			],
+			[
+				"_",
+				"_bufferLen"
+			],
+			[
+				"Settings",
+				"SettingsHandler"
+			],
+			[
 				"Sett",
 				"SettingsHandler"
 			],
@@ -250,19 +354,33 @@
 	},
 	"file_history":
 	[
-		"/D/Dokumente/Arduino/libraries/EEPROMEx/EEPROMVar.h",
+		"/D/Dokumente/Arduino/libraries/Radio-master/examples/SerialRadio/SerialRadio.ino",
+		"/D/Dokumente/Arduino/libraries/Radio-master/src/RDA5807M.cpp",
+		"/D/Google Drive/Projekte/ArduinoRadio/SettingsRegister",
+		"/D/Google Drive/Projekte/ArduinoRadio/src/Debug.h",
+		"/D/Google Drive/Projekte/ArduinoRadio/src/SettingsHandler.h",
+		"/D/Google Drive/Projekte/ArduinoRadio/src/SettingsHandler.cpp",
+		"/D/Google Drive/Projekte/ArduinoRadio/src/DisplayHandler.cpp",
+		"/D/Google Drive/Projekte/ArduinoRadio/src/StateMainDisplay.cpp",
+		"/D/Dokumente/Arduino/libraries/EEPROMEx/examples/EEPROMEx/EEPROMEx.pde",
 		"/D/Dokumente/Arduino/libraries/EEPROMEx/EEPROMex.h",
+		"/D/Google Drive/Projekte/ArduinoRadio/src/main.cpp",
+		"/D/Google Drive/Projekte/ArduinoRadio/src/DisplayHandler.h",
+		"/D/Google Drive/Projekte/ArduinoRadio/src/PowerHandler.cpp",
+		"/D/Dokumente/Arduino/libraries/EEPROMEx/EEPROMVar.h",
+		"/D/Google Drive/Projekte/ArduinoRadio/PinOut",
+		"/D/Google Drive/Projekte/ArduinoRadio/src/ButtonHandler.h",
+		"/D/Google Drive/Projekte/ArduinoRadio/src/Button.cpp",
+		"/D/Google Drive/Projekte/ArduinoRadio/src/Button.h",
+		"/D/Google Drive/Projekte/ArduinoRadio/src/TunerHandler.cpp",
+		"/D/Google Drive/Projekte/ArduinoRadio/src/ButtonHandler.cpp",
+		"/D/Dokumente/Arduino/libraries/Radio-master/src/SI4703.cpp",
 		"/D/Dokumente/Arduino/libraries/EEPROMEx/EEPROMex.cpp",
 		"/D/Dokumente/Arduino/libraries/Radio-master/src/radio.cpp",
 		"/D/Google Drive/Projekte/ArduinoRadio/src/StateHandler.cpp",
 		"/D/Google Drive/Projekte/ArduinoRadio/src/StateHandler.h",
-		"/D/Google Drive/Projekte/ArduinoRadio/src/DisplayHandler.h",
 		"/D/Google Drive/Projekte/ArduinoRadio/src/PowerHandler.h",
 		"/D/Google Drive/Projekte/ArduinoRadio/src/TunerHandler.h",
-		"/D/Google Drive/Projekte/ArduinoRadio/src/main.cpp",
-		"/D/Google Drive/Projekte/ArduinoRadio/src/DisplayHandler.cpp",
-		"/D/Google Drive/Projekte/ArduinoRadio/src/SettingsHandler.cpp",
-		"/D/Google Drive/Projekte/ArduinoRadio/src/PowerHandler.cpp",
 		"/D/Google Drive/Projekte/ArduinoRadio/firmware/src/ButtonHandler.h",
 		"/D/Google Drive/Projekte/ArduinoRadio/firmware/src/main.cpp",
 		"/D/Google Drive/Projekte/ArduinoRadio/firmware/src/ButtonHandler.cpp",
@@ -294,11 +412,8 @@
 		"/D/Google Drive/Projekte/ArduinoRadio/Radio/PowerHandler.cpp",
 		"/D/Google Drive/Projekte/ArduinoRadio/Radio/PowerHandler.h",
 		"/D/Google Drive/Projekte/ArduinoRadio/Radio/Tuner.h",
-		"/D/Dokumente/Arduino/libraries/Radio-master/examples/SerialRadio/SerialRadio.ino",
 		"/D/Dokumente/Arduino/libraries/Radio-master/src/radio.h",
-		"/D/Dokumente/Arduino/libraries/Radio-master/src/RDA5807M.cpp",
 		"/D/SerialRadio/SerialRadio.ino",
-		"/D/Google Drive/Projekte/ArduinoRadio/PinOut",
 		"/D/Google Drive/Warhammer 40k/Fral.txt",
 		"/D/von Affenfels Projekte/IR157/system/perl/InterRed/Userlink.pm",
 		"/D/von Affenfels Projekte/quote_test.pl",
@@ -366,18 +481,7 @@
 		"/Z/public_html/ams/trunk/public/js/elements/shared/AdElement/Ad.js",
 		"/Z/public_html/asics/wp-content/themes/ape/application/config/elements/ad.json",
 		"/Z/public_html/asics/wp-content/themes/ape/application/views/Ad/Ivw/Ivw.phtml",
-		"/Z/public_html/asics/wp-content/themes/ape/application/elements/Ad/IvwElement.php",
-		"/Z/public_html/asics/wp-content/themes/ape/application/layout/default.phtml",
-		"/Z/public_html/asics/wp-content/themes/ape/public/js/ape/Base/application.js",
-		"/Z/public_html/asics/wp-content/themes/ape/public/js/ape/Slider.js",
-		"/Z/public_html/ams/trunk/application/elements/shared/AdsAndStats/AdElement.php",
-		"/Z/public_html/ams/trunk/application/views/scripts/shared/AdsAndStats/Ad/Ivw.phtml",
-		"/Z/public_html/asics/wp-content/themes/ape/application/elements/Team/DetailElement.php",
-		"/Z/public_html/asics/wp-content/themes/ape/functions.php",
-		"/Z/public_html/asics/wp-content/themes/ape/application/elements/Detail/DetailElement.php",
-		"/Z/public_html/asics/wp-config/view.config.php",
-		"/Z/public_html/asics/wp-content/plugins/post-type-switcher/post-type-switcher.php",
-		"/Z/public_html/asics/wp-content/themes/ape/public/js/ape/Team/Formular.js"
+		"/Z/public_html/asics/wp-content/themes/ape/application/elements/Ad/IvwElement.php"
 	],
 	"find":
 	{
@@ -405,6 +509,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"EEPROMex",
+			"_registers",
+			"DEBUG",
 			"Settin",
 			"6",
 			"RADIO_REG_VOL",

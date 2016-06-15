@@ -9,6 +9,7 @@
 #define PIN_RESET A0
 #define PIN_SDIO  A4
 #define PIN_SCLK  A5
+#define PIN_MUTE   2
 
 #define REG_POWERCFG				0x02
 #define REG_POWERCFG_DSMUTE			0x8000
@@ -69,6 +70,9 @@ void TunerHandler::setup() {
 	// To get the Si4703 inito 2-wire mode, SEN needs to be high and SDIO needs to be low after a reset
 	// The breakout board has SEN pulled high, but also has SDIO pulled high. Therefore, after a normal power up
 	// The Si4703 will be in an unknown state. RST must be controlled
+
+	pinMode(PIN_MUTE, OUTPUT);
+	digitalWrite(PIN_MUTE, LOW);
 
 	pinMode(PIN_RESET, OUTPUT);
 	pinMode(PIN_SDIO, OUTPUT);
@@ -211,6 +215,12 @@ void TunerHandler::setVolume(uint16_t newVolume) {
 	}
 	TunerHandler::_registers[REG_SYSCFG2] &= ~REG_SYSCFG2_VOL_MASK;
 	TunerHandler::_registers[REG_SYSCFG2] |= newVolume;
+
+	if (newVolume > 1) {
+		digitalWrite(PIN_MUTE, HIGH);
+	} else {
+		digitalWrite(PIN_MUTE, LOW);
+	}
 
 	TunerHandler::_saveRegisters();
 }

@@ -110,6 +110,7 @@ void TunerHandler::setup() {
 	TunerHandler::_saveRegisters();
 	delay(110); // Max powerup time
 
+	TunerHandler::_readRegisters();
 	TunerHandler::setFrequency(SettingsHandler::getLastFrequency());
 	TunerHandler::setVolume(SettingsHandler::getVolume());
 }
@@ -134,7 +135,7 @@ void TunerHandler::_saveRegisters() {
 }
 
 void TunerHandler::_readRegisters() {
-	debugPrintf(F("TunerHandler::_readRegisters"));
+	//debugPrintf(F("TunerHandler::_readRegisters"));
 
 	// Si4703 begins reading from register upper register of 0x0A and reads to 0x0F, then loops to 0x00.
 	// We want to read the entire register set from 0x0A to 0x09 = 32 bytes.
@@ -160,7 +161,7 @@ void TunerHandler::_readRegisters() {
 }
 
 uint16_t TunerHandler::getFrequency() {
-	debugPrintf(F("TunerHandler::_getFrequency"));
+	//debugPrintf(F("TunerHandler::_getFrequency"));
 	uint16_t channel = TunerHandler::_registers[REG_READCHAN] & REG_READCHAN_READCHAN_MASK;
 	return (channel * FREQ_SPACING) + FREQ_LIMIT_LOW;
 } 

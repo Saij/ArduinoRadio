@@ -12,7 +12,11 @@ class StateMainDisplay : public State {
 		void update();
 
 	private:
-		void _displayFrequency(uint16_t frequency);
+		void _displayFrequency();
+		void _displayVolume();
+
+		uint16_t _curFrequency = 0;
+		uint16_t _curVolume = 0;
 };
 
 #endif // __STATE_MAIN_DISPLAY_H__

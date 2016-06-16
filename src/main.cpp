@@ -18,7 +18,6 @@ void setup() {
 }
 
 void loop() {
-	TunerHandler::update();
 	SettingsHandler::update();
 	ButtonHandler::update();
 	TunerHandler::update();

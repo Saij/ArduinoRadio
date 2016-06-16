@@ -28,30 +28,58 @@ void _int16ToS(char *s, uint16_t val) {
 
 void StateMainDisplay::onEnter() {
 	debugPrintf(F("Entering Main Display State"));
+
 	DisplayHandler::clearDisplay();
+
+	this->_curVolume = SettingsHandler::getVolume();
+	this->_curFrequency = TunerHandler::getFrequency();
+
+	this->_displayFrequency();
+	this->_displayVolume();
 }
 
 void StateMainDisplay::update() {
 	uint16_t currentFrequency = TunerHandler::getFrequency();
-
-	StateMainDisplay::_displayFrequency(currentFrequency);
+	if (currentFrequency != this->_curFrequency) {
+		// Frequency changed
+		this->_displayFrequency();
+		this->_curFrequency = currentFrequency;	
+	}
 }
 
-void StateMainDisplay::_displayFrequency(uint16_t frequency) {
+void StateMainDisplay::_displayFrequency() {
 	char buffer[FREQ_DISPLAY_BUF_LEN];
 
-	if ((buffer != NULL)) {
-    	*buffer = '\0';
+	// " ff.ff MHz" or "fff.ff MHz"
+  	_int16ToS(buffer, this->_curFrequency);
 
-		// " ff.ff MHz" or "fff.ff MHz"
-      	_int16ToS(buffer, frequency);
+  	// insert decimal point
+  	buffer[5] = buffer[4]; 
+  	buffer[4] = buffer[3]; 
+  	buffer[3] = '.';
 
-      	// insert decimal point
-      	buffer[5] = buffer[4]; 
-      	buffer[4] = buffer[3]; 
-      	buffer[3] = '.';
+    // append units
+  	strcpy(buffer + 6, " MHz");
 
-	    // append units
-      	strcpy(buffer + 6, " MHz");
-    }
+  	DisplayHandler::setCursor(0, 3);
+  	DisplayHandler::print(buffer);
+}
+
+void StateMainDisplay::_displayVolume() {
+	DisplayHandler::setCursor(4, 0);
+
+	for (uint16_t volLevel = 0; volLevel <= 31; volLevel += 2) {
+		if (volLevel <= this->_curVolume) {
+			if (volLevel + 1 > this->_curVolume) {
+				// Half volume bar
+				DisplayHandler::write(CHAR_HALF_BLOCK);
+			} else {
+				// Full volume bar
+				DisplayHandler::write(CHAR_FULL_BLOCK);			
+			}
+		} else {
+			// Print space to clear old out
+			DisplayHandler::write(32);
+		}
+	}
 }

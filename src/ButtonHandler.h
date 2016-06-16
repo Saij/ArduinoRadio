@@ -5,8 +5,8 @@
 
 #define NUM_BUTTONS 8
 
-#define BUTTON_FREQ_UP		0
-#define BUTTON_FREQ_DOWN	1
+#define BUTTON_FREQ_DOWN	0
+#define BUTTON_FREQ_UP		1
 #define BUTTON_INFO   		2
 #define BUTTON_STORE1 		3
 #define BUTTON_STORE2 		4

@@ -1,0 +1,9 @@
+TODO
+====
+
+- Timed Button States
+- Presets
+- Show TA
+- Show RDS Active
+- Show Mono/Stereo/Blend
+- Implement Timeout in TunerHandler::_waitEnd

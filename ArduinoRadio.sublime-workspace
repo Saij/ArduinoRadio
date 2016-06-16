@@ -337,7 +337,7 @@
 			]
 		]
 	],
-	"build_varint": "Build",
+	"build_varint": "",
 	"command_palette":
 	{
 		"height": 392.0,
@@ -370,6 +370,7 @@
 	},
 	"file_history":
 	[
+		"/D/Google Drive/Projekte/ArduinoRadio/src/main.cpp",
 		"/D/Google Drive/Projekte/ArduinoRadio/src/Debug.h",
 		"/D/Google Drive/Projekte/ArduinoRadio/src/Button.h",
 		"/D/Google Drive/Projekte/ArduinoRadio/src/Button.cpp",
@@ -382,7 +383,6 @@
 		"/D/Google Drive/Projekte/ArduinoRadio/src/StateMainDisplay.cpp",
 		"/D/Dokumente/Arduino/libraries/EEPROMEx/examples/EEPROMEx/EEPROMEx.pde",
 		"/D/Dokumente/Arduino/libraries/EEPROMEx/EEPROMex.h",
-		"/D/Google Drive/Projekte/ArduinoRadio/src/main.cpp",
 		"/D/Google Drive/Projekte/ArduinoRadio/src/DisplayHandler.h",
 		"/D/Google Drive/Projekte/ArduinoRadio/src/PowerHandler.cpp",
 		"/D/Dokumente/Arduino/libraries/EEPROMEx/EEPROMVar.h",

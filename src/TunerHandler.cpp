@@ -115,7 +115,7 @@ void TunerHandler::setup() {
 }
 
 void TunerHandler::update() {
-
+	TunerHandler::_readRegisters();
 }
 
 void TunerHandler::_saveRegisters() {
@@ -161,7 +161,6 @@ void TunerHandler::_readRegisters() {
 
 uint16_t TunerHandler::getFrequency() {
 	debugPrintf(F("TunerHandler::_getFrequency"));
-	TunerHandler::_readRegisters();
 	uint16_t channel = TunerHandler::_registers[REG_READCHAN] & REG_READCHAN_READCHAN_MASK;
 	return (channel * FREQ_SPACING) + FREQ_LIMIT_LOW;
 } 
@@ -170,8 +169,6 @@ void TunerHandler::setFrequency(uint16_t newFrequency) {
 	newFrequency = constrain(newFrequency, FREQ_LIMIT_LOW, FREQ_LIMIT_HIGH);
 	debugPrintf(F("TunerHandler::setFrequency: %d"), newFrequency);
 	
-	TunerHandler::_readRegisters();
-
 	uint16_t channel = (newFrequency - FREQ_LIMIT_LOW) / FREQ_SPACING;
 	TunerHandler::_registers[REG_CHANNEL] &= ~REG_CHANNEL_CHANNEL_MASK;
 	TunerHandler::_registers[REG_CHANNEL] |= REG_CHANNEL_TUNE | channel;
@@ -203,7 +200,6 @@ void TunerHandler::setVolume(uint16_t newVolume) {
 	debugPrintf(F("TunerHandler::setVolume: %d"), newVolume);
 	
 	newVolume = constrain(newVolume, 0, 30);
-	TunerHandler::_readRegisters();
 
 	if (newVolume > 15) {
 		// Normal volume

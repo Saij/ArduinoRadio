@@ -17,7 +17,8 @@ void setup() {
 	PowerHandler::setup();
 }
 
-void loop() { 
+void loop() {
+	TunerHandler::update();
 	SettingsHandler::update();
 	ButtonHandler::update();
 	TunerHandler::update();

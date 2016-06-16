@@ -29,6 +29,9 @@ class ButtonHandler {
 		static bool isReleased(uint8_t button);
 		static bool isPressed(uint8_t button);
 
+		static bool isTurnedUp();
+		static bool isTurnedDown();
+
 	private:
 		static void _updateRotEnc();
 
@@ -38,8 +41,8 @@ class ButtonHandler {
 		static unsigned long _lastDebounceTime[];
 		static unsigned long _lastChangeTime[];
 
-		static volatile bool _turnDetected;
-		static volatile bool _turnedUp;
+		static volatile uint8_t _detectedTurn;
+		static uint8_t _handledTurn;
 };
 
 #endif // __BUTTON_HANDLER_H__

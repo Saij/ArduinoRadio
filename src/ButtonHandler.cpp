@@ -13,17 +13,28 @@
 #define DEBOUNCE_DELAY  	50
 #define CHANGE_DELAY    	50
 
+#define ROTENC_IRP			0
+#define ROTENC_CLK			3
+#define ROTENC_DATA			4
+
+#define TURN_NONE			0
+#define TURN_UP				1
+#define TURN_DOWN			2
+
 uint8_t ButtonHandler::_buttonState[NUM_BUTTONS] = {BUTTON_STATE_UP, BUTTON_STATE_UP, BUTTON_STATE_UP, BUTTON_STATE_UP, BUTTON_STATE_UP, BUTTON_STATE_UP, BUTTON_STATE_UP, BUTTON_STATE_UP};
 uint8_t ButtonHandler::_lastButtonState[NUM_BUTTONS] = {BUTTON_STATE_UP, BUTTON_STATE_UP, BUTTON_STATE_UP, BUTTON_STATE_UP, BUTTON_STATE_UP, BUTTON_STATE_UP, BUTTON_STATE_UP, BUTTON_STATE_UP};
 bool ButtonHandler::_hasChanged[NUM_BUTTONS] = {false, false, false, false, false, false, false, false};
 unsigned long ButtonHandler::_lastDebounceTime[NUM_BUTTONS] = {0, 0, 0, 0, 0, 0, 0, 0};
 unsigned long ButtonHandler::_lastChangeTime[NUM_BUTTONS] = {0, 0, 0, 0, 0, 0, 0, 0};
 
-volatile bool ButtonHandler::_turnDetected = false;
-volatile bool ButtonHandler::_turnedUp = false;
+volatile uint8_t ButtonHandler::_detectedTurn = TURN_NONE;
+uint8_t ButtonHandler::_handledTurn = TURN_NONE;
 
 void ButtonHandler::setup() {
 	debugPrintf(F("Initialize Buttons"));
+
+	pinMode(ROTENC_DATA, INPUT);
+	pinMode(ROTENC_CLK, INPUT);
   
 	pinMode(PIN_BTN_PLOAD, OUTPUT);
 	pinMode(PIN_BTN_CLKEN, OUTPUT);
@@ -33,7 +44,7 @@ void ButtonHandler::setup() {
 	digitalWrite(PIN_BTN_CLK, LOW);
 	digitalWrite(PIN_BTN_PLOAD, HIGH);
 
-	attachInterrupt (0, ButtonHandler::_updateRotEnc, FALLING);
+	attachInterrupt(ROTENC_IRP, ButtonHandler::_updateRotEnc, FALLING);
 }
 
 void ButtonHandler::update() {
@@ -82,6 +93,18 @@ void ButtonHandler::update() {
 		delayMicroseconds(PULSE_WIDTH_USEC);
 		digitalWrite(PIN_BTN_CLK, LOW);
 	}
+
+	// Rotary Encoder
+	ButtonHandler::_handledTurn = ButtonHandler::_detectedTurn;
+	ButtonHandler::_detectedTurn = TURN_NONE;
+}
+
+bool ButtonHandler::isTurnedUp() {
+	return ButtonHandler::_handledTurn == TURN_UP;
+}
+
+bool ButtonHandler::isTurnedDown() {
+	return ButtonHandler::_handledTurn == TURN_DOWN;
 }
 
 bool ButtonHandler::isUp(uint8_t button) {
@@ -101,5 +124,9 @@ bool ButtonHandler::isReleased(uint8_t button) {
 }
 
 void ButtonHandler::_updateRotEnc() {
-	
+	if (digitalRead(ROTENC_CLK) == digitalRead(ROTENC_DATA)) {
+		ButtonHandler::_detectedTurn = TURN_UP;
+	} else {
+		ButtonHandler::_detectedTurn = TURN_DOWN;
+	}
 }

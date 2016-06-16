@@ -19,6 +19,9 @@ bool ButtonHandler::_hasChanged[NUM_BUTTONS] = {false, false, false, false, fals
 unsigned long ButtonHandler::_lastDebounceTime[NUM_BUTTONS] = {0, 0, 0, 0, 0, 0, 0, 0};
 unsigned long ButtonHandler::_lastChangeTime[NUM_BUTTONS] = {0, 0, 0, 0, 0, 0, 0, 0};
 
+volatile bool ButtonHandler::_turnDetected = false;
+volatile bool ButtonHandler::_turnedUp = false;
+
 void ButtonHandler::setup() {
 	debugPrintf(F("Initialize Buttons"));
   
@@ -29,6 +32,8 @@ void ButtonHandler::setup() {
 
 	digitalWrite(PIN_BTN_CLK, LOW);
 	digitalWrite(PIN_BTN_PLOAD, HIGH);
+
+	attachInterrupt (0, ButtonHandler::_updateRotEnc, FALLING);
 }
 
 void ButtonHandler::update() {
@@ -93,4 +98,8 @@ bool ButtonHandler::isPressed(uint8_t button) {
 
 bool ButtonHandler::isReleased(uint8_t button) {
 	return ButtonHandler::_hasChanged[button] && ButtonHandler::_buttonState[button] == BUTTON_STATE_UP;
+}
+
+void ButtonHandler::_updateRotEnc() {
+	
 }

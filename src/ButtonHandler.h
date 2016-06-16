@@ -19,22 +19,27 @@
 
 
 class ButtonHandler {
-  	public:
-    	static void setup();
-    	static void update();
+	public:
+		static void setup();
+		static void update();
 
-    	static bool isUp(uint8_t button);
-    	static bool isDown(uint8_t button);
+		static bool isUp(uint8_t button);
+		static bool isDown(uint8_t button);
 
-    	static bool isReleased(uint8_t button);
-    	static bool isPressed(uint8_t button);
+		static bool isReleased(uint8_t button);
+		static bool isPressed(uint8_t button);
 
-  	private:
+	private:
+		static void _updateRotEnc();
+
 		static uint8_t _buttonState[];
 		static uint8_t _lastButtonState[];
 		static bool _hasChanged[];
 		static unsigned long _lastDebounceTime[];
 		static unsigned long _lastChangeTime[];
+
+		static volatile bool _turnDetected;
+		static volatile bool _turnedUp;
 };
 
 #endif // __BUTTON_HANDLER_H__

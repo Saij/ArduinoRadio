@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"uint",
+				"uint16_t"
+			],
+			[
+				"State",
+				"StateMainDisplay"
+			],
+			[
+				"Button",
+				"ButtonHandler"
+			],
+			[
+				"PIN_BT",
+				"PIN_BTN_DATAIN"
+			],
+			[
+				"digit",
+				"digitalRead"
+			],
+			[
 				"REG_SYSCFG2",
 				"REG_SYSCFG2_VOL_MASK"
 			],
@@ -18,10 +38,6 @@
 			[
 				"REG_SYSCFG3",
 				"REG_SYSCFG3"
-			],
-			[
-				"uint",
-				"uint8_t"
 			],
 			[
 				"REG_ST",
@@ -317,11 +333,11 @@
 			],
 			[
 				"PlatformIO",
-				"Upload"
+				"Build"
 			]
 		]
 	],
-	"build_varint": "Upload",
+	"build_varint": "Build",
 	"command_palette":
 	{
 		"height": 392.0,
@@ -354,10 +370,12 @@
 	},
 	"file_history":
 	[
+		"/D/Google Drive/Projekte/ArduinoRadio/src/Debug.h",
+		"/D/Google Drive/Projekte/ArduinoRadio/src/Button.h",
+		"/D/Google Drive/Projekte/ArduinoRadio/src/Button.cpp",
 		"/D/Dokumente/Arduino/libraries/Radio-master/examples/SerialRadio/SerialRadio.ino",
 		"/D/Dokumente/Arduino/libraries/Radio-master/src/RDA5807M.cpp",
 		"/D/Google Drive/Projekte/ArduinoRadio/SettingsRegister",
-		"/D/Google Drive/Projekte/ArduinoRadio/src/Debug.h",
 		"/D/Google Drive/Projekte/ArduinoRadio/src/SettingsHandler.h",
 		"/D/Google Drive/Projekte/ArduinoRadio/src/SettingsHandler.cpp",
 		"/D/Google Drive/Projekte/ArduinoRadio/src/DisplayHandler.cpp",
@@ -370,8 +388,6 @@
 		"/D/Dokumente/Arduino/libraries/EEPROMEx/EEPROMVar.h",
 		"/D/Google Drive/Projekte/ArduinoRadio/PinOut",
 		"/D/Google Drive/Projekte/ArduinoRadio/src/ButtonHandler.h",
-		"/D/Google Drive/Projekte/ArduinoRadio/src/Button.cpp",
-		"/D/Google Drive/Projekte/ArduinoRadio/src/Button.h",
 		"/D/Google Drive/Projekte/ArduinoRadio/src/TunerHandler.cpp",
 		"/D/Google Drive/Projekte/ArduinoRadio/src/ButtonHandler.cpp",
 		"/D/Dokumente/Arduino/libraries/Radio-master/src/SI4703.cpp",
@@ -509,6 +525,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"this->",
 			"EEPROMex",
 			"_registers",
 			"DEBUG",

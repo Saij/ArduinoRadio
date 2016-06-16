@@ -206,14 +206,16 @@ void TunerHandler::setVolume(uint16_t newVolume) {
 		// Normal volume
 		TunerHandler::_registers[REG_SYSCFG3] &= ~REG_SYSCFG3_VOLEXT;
 		newVolume -= 15;
+		debugPrintf(F("Normal Volume: %d"), newVolume);
 	} else {
 		// Extended volume
 		TunerHandler::_registers[REG_SYSCFG3] |= REG_SYSCFG3_VOLEXT;
+		debugPrintf(F("Extended Volume: %d"), newVolume);
 	}
 	TunerHandler::_registers[REG_SYSCFG2] &= ~REG_SYSCFG2_VOL_MASK;
 	TunerHandler::_registers[REG_SYSCFG2] |= newVolume;
 
-	if (newVolume > 1) {
+	if (newVolume > 0) {
 		digitalWrite(PIN_MUTE, HIGH);
 	} else {
 		digitalWrite(PIN_MUTE, LOW);

@@ -11,11 +11,21 @@
 #define PULSE_WIDTH_USEC  	5	
 
 #define DEBOUNCE_DELAY  	50
+#define DEBOUNCE_TURN_DELAY	100
 #define CHANGE_DELAY    	50
 
-#define ROTENC_IRP			0
 #define ROTENC_CLK			3
 #define ROTENC_DATA			4
+
+#define ENC_PIN_A			PIND3
+#define ENC_PIN_B			PIND4
+
+#define ENC_STT_IDLE 		0x00
+#define ENC_STT_CW 			0x01
+#define ENC_STT_CCW 		0x02
+
+#define SAMPLING_TIME		100
+#define PULSES_PER_STEP		4
 
 #define TURN_NONE			0
 #define TURN_UP				1
@@ -26,16 +36,54 @@ uint8_t ButtonHandler::_lastButtonState[NUM_BUTTONS] = {BUTTON_STATE_UP, BUTTON_
 bool ButtonHandler::_hasChanged[NUM_BUTTONS] = {false, false, false, false, false, false, false, false};
 unsigned long ButtonHandler::_lastDebounceTime[NUM_BUTTONS] = {0, 0, 0, 0, 0, 0, 0, 0};
 unsigned long ButtonHandler::_lastChangeTime[NUM_BUTTONS] = {0, 0, 0, 0, 0, 0, 0, 0};
+uint8_t ButtonHandler::_turn = TURN_NONE;
 
-volatile uint8_t ButtonHandler::_detectedTurn = TURN_NONE;
-uint8_t ButtonHandler::_handledTurn = TURN_NONE;
+uint8_t ButtonHandler::_cwRotorState[4] = {B10, B00, B11, B01};
+uint8_t ButtonHandler::_ccwRotorState[4] = {B01, B11, B00, B10};
+
+uint8_t ButtonHandler::_readEncoder() {
+  	static uint8_t prevRotorState = 0;
+  	static uint8_t prevButtonState = 0;
+  	static int bufferedCounts = 0;
+
+  	uint8_t result = 0;
+
+  	uint8_t startState = digitalRead(ROTENC_DATA) | (digitalRead(ROTENC_CLK) << 1); // Get current state
+  	delayMicroseconds(SAMPLING_TIME); // Wait safety bounce time
+  	uint8_t stopState = digitalRead(ROTENC_DATA) | (digitalRead(ROTENC_CLK) << 1); // Get current state
+  
+  	if (startState == stopState) { // Check if the state was stable
+    	// Interpret rotor state
+    	uint8_t rotorState = stopState & B00000011; // That's the A and B pin state
+    	if (rotorState != prevRotorState) { // Check if rotor state has changed
+      		if (rotorState == ButtonHandler::_cwRotorState[prevRotorState]) {
+        		bufferedCounts++; 
+      		} else if (rotorState == ButtonHandler::_ccwRotorState[prevRotorState]) {
+        		bufferedCounts--; 
+        	} else {
+        		bufferedCounts = 0;		
+        	}
+        
+      		if (abs(bufferedCounts) == PULSES_PER_STEP) {
+        		if (bufferedCounts > 0) {
+          			result |= ENC_STT_CCW;
+        		}
+        		if (bufferedCounts < 0) {
+          			result |= ENC_STT_CW;  
+        		}
+        		bufferedCounts = 0;
+      		}
+      
+      		prevRotorState = rotorState; // Record state for next pulse interpretation
+    	}
+  	}
+
+  	return result;
+}
 
 void ButtonHandler::setup() {
 	debugPrintf(F("Initialize Buttons"));
-
-	pinMode(ROTENC_DATA, INPUT);
-	pinMode(ROTENC_CLK, INPUT);
-  
+ 
 	pinMode(PIN_BTN_PLOAD, OUTPUT);
 	pinMode(PIN_BTN_CLKEN, OUTPUT);
 	pinMode(PIN_BTN_CLK, OUTPUT);
@@ -44,7 +92,10 @@ void ButtonHandler::setup() {
 	digitalWrite(PIN_BTN_CLK, LOW);
 	digitalWrite(PIN_BTN_PLOAD, HIGH);
 
-	attachInterrupt(ROTENC_IRP, ButtonHandler::_updateRotEnc, FALLING);
+	pinMode(ROTENC_DATA, INPUT);
+	pinMode(ROTENC_CLK, INPUT);
+	digitalWrite(ROTENC_CLK, HIGH);
+	digitalWrite(ROTENC_DATA, HIGH);
 }
 
 void ButtonHandler::update() {
@@ -94,17 +145,23 @@ void ButtonHandler::update() {
 		digitalWrite(PIN_BTN_CLK, LOW);
 	}
 
-	// Rotary Encoder
-	ButtonHandler::_handledTurn = ButtonHandler::_detectedTurn;
-	ButtonHandler::_detectedTurn = TURN_NONE;
+	ButtonHandler::_turn = TURN_NONE;
+  	uint8_t encoderRead = ButtonHandler::_readEncoder();
+  	if (encoderRead) {
+  		if (encoderRead & ENC_STT_CW) {
+  			ButtonHandler::_turn = TURN_UP;
+  		} else if (encoderRead & ENC_STT_CCW) {
+  			ButtonHandler::_turn = TURN_DOWN;
+  		}
+  	}
 }
 
 bool ButtonHandler::isTurnedUp() {
-	return ButtonHandler::_handledTurn == TURN_UP;
+	return ButtonHandler::_turn == TURN_UP;
 }
 
 bool ButtonHandler::isTurnedDown() {
-	return ButtonHandler::_handledTurn == TURN_DOWN;
+	return ButtonHandler::_turn == TURN_DOWN;
 }
 
 bool ButtonHandler::isUp(uint8_t button) {
@@ -121,12 +178,4 @@ bool ButtonHandler::isPressed(uint8_t button) {
 
 bool ButtonHandler::isReleased(uint8_t button) {
 	return ButtonHandler::_hasChanged[button] && ButtonHandler::_buttonState[button] == BUTTON_STATE_UP;
-}
-
-void ButtonHandler::_updateRotEnc() {
-	if (digitalRead(ROTENC_CLK) == digitalRead(ROTENC_DATA)) {
-		ButtonHandler::_detectedTurn = TURN_UP;
-	} else {
-		ButtonHandler::_detectedTurn = TURN_DOWN;
-	}
 }

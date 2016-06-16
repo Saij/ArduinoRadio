@@ -33,7 +33,7 @@ class ButtonHandler {
 		static bool isTurnedDown();
 
 	private:
-		static void _updateRotEnc();
+		static uint8_t _readEncoder();
 
 		static uint8_t _buttonState[];
 		static uint8_t _lastButtonState[];
@@ -41,8 +41,9 @@ class ButtonHandler {
 		static unsigned long _lastDebounceTime[];
 		static unsigned long _lastChangeTime[];
 
-		static volatile uint8_t _detectedTurn;
-		static uint8_t _handledTurn;
+		static uint8_t _turn;
+		static uint8_t _cwRotorState[];
+		static uint8_t _ccwRotorState[];
 };
 
 #endif // __BUTTON_HANDLER_H__

@@ -9,6 +9,9 @@
 
 #define FREQ_DISPLAY_BUF_LEN	12
 
+#define MIN_VOLUME  0
+#define MAX_VOLUME 31
+
 // This is a special format routine used to format frequencies as strings with leading blanks.
 // up to 5 digits only ("    0".."99999")
 // *s MUST be able to hold the characters
@@ -45,6 +48,20 @@ void StateMainDisplay::update() {
 		this->_displayFrequency();
 		this->_curFrequency = currentFrequency;	
 	}
+
+	if (ButtonHandler::isTurnedUp() && this->_curVolume < MAX_VOLUME) {
+		this->_curVolume += 1;
+		SettingsHandler::setVolume(this->_curVolume);
+		TunerHandler::setVolume(this->_curVolume);
+		this->_displayVolume();
+	}
+
+	if (ButtonHandler::isTurnedDown() && this->_curVolume > MIN_VOLUME) {
+		this->_curVolume -= 1;
+		SettingsHandler::setVolume(this->_curVolume);
+		TunerHandler::setVolume(this->_curVolume);
+		this->_displayVolume();
+	}
 }
 
 void StateMainDisplay::_displayFrequency() {
@@ -79,7 +96,7 @@ void StateMainDisplay::_displayVolume() {
 			}
 		} else {
 			// Print space to clear old out
-			DisplayHandler::write(32);
+			DisplayHandler::write(' ');
 		}
 	}
 }

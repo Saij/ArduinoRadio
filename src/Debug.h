@@ -1,7 +1,3 @@
-// Enable debug system
-// Comment to disable debug system
-#define DEBUG
-
 #ifdef DEBUG
 
 #include <Arduino.h>

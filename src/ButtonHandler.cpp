@@ -43,7 +43,6 @@ uint8_t ButtonHandler::_ccwRotorState[4] = {B01, B11, B00, B10};
 
 uint8_t ButtonHandler::_readEncoder() {
   	static uint8_t prevRotorState = 0;
-  	static uint8_t prevButtonState = 0;
   	static int bufferedCounts = 0;
 
   	uint8_t result = 0;

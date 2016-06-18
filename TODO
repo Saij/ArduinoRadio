@@ -1,12 +1,17 @@
 TODO
 ====
 
+- Optimize PinOut to support direct port access
 - Repeated Button States (for selecting a range of frequency)
 - Timed Button States
 - Presets
 - Show TA
 - Show RDS Active
 - Show Mono/Stereo/Blend
+- RDS
+- Stand By
+- Menu
+- Seek
 - Implement Timeout in TunerHandler::_waitEnd
 - Rewrite digitalRead/digitalWrite (Refactor all Arduino out)
 - Rewrite LCD library

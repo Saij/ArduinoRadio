@@ -4,9 +4,9 @@ A1, 9, 8, 7, 6, 10
 Radio
 Standard
 
-D00 => Seriell
+D00 => AMP Mute
 D01 => Seriell
-D02 => AMP Mute
+D02 => RotEnc Button
 D03 => RotEnc Clk
 D04 => RotEnc Dt
 D05 => Helligkeit

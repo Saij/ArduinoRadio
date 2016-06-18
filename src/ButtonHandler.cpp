@@ -11,20 +11,16 @@
 #define PULSE_WIDTH_USEC  	5	
 
 #define DEBOUNCE_DELAY  	50
-#define DEBOUNCE_TURN_DELAY	100
 #define CHANGE_DELAY    	50
 
 #define ROTENC_CLK			3
 #define ROTENC_DATA			4
-
-#define ENC_PIN_A			PIND3
-#define ENC_PIN_B			PIND4
+#define ROTENC_BUTTON		2
 
 #define ENC_STT_IDLE 		0x00
 #define ENC_STT_CW 			0x01
 #define ENC_STT_CCW 		0x02
 
-#define SAMPLING_TIME		100
 #define PULSES_PER_STEP		4
 
 #define TURN_NONE			0
@@ -35,7 +31,7 @@ uint8_t ButtonHandler::_buttonState[NUM_BUTTONS] = {BUTTON_STATE_UP, BUTTON_STAT
 uint8_t ButtonHandler::_lastButtonState[NUM_BUTTONS] = {BUTTON_STATE_UP, BUTTON_STATE_UP, BUTTON_STATE_UP, BUTTON_STATE_UP, BUTTON_STATE_UP, BUTTON_STATE_UP, BUTTON_STATE_UP, BUTTON_STATE_UP};
 bool ButtonHandler::_hasChanged[NUM_BUTTONS] = {false, false, false, false, false, false, false, false};
 unsigned long ButtonHandler::_lastDebounceTime[NUM_BUTTONS] = {0, 0, 0, 0, 0, 0, 0, 0};
-unsigned long ButtonHandler::_lastChangeTime[NUM_BUTTONS] = {0, 0, 0, 0, 0, 0, 0, 0};
+unsigned long ButtonHandler::_lastChangeTime[NUM_BUTTONS] = {millis(), millis(), millis(), millis(), millis(), millis(), millis(), millis()};
 uint8_t ButtonHandler::_turn = TURN_NONE;
 
 uint8_t ButtonHandler::_cwRotorState[4] = {B10, B00, B11, B01};
@@ -47,9 +43,9 @@ uint8_t ButtonHandler::_readEncoder() {
 
   	uint8_t result = 0;
 
-  	uint8_t startState = digitalRead(ROTENC_DATA) | (digitalRead(ROTENC_CLK) << 1); // Get current state
-  	delayMicroseconds(SAMPLING_TIME); // Wait safety bounce time
-  	uint8_t stopState = digitalRead(ROTENC_DATA) | (digitalRead(ROTENC_CLK) << 1); // Get current state
+  	uint8_t startState = digitalRead(ROTENC_DATA) | (digitalRead(ROTENC_CLK) << 1) | (digitalRead(ROTENC_BUTTON) << 2); // Get current state
+  	delayMicroseconds(DEBOUNCE_DELAY); // Wait safety bounce time
+  	uint8_t stopState = digitalRead(ROTENC_DATA) | (digitalRead(ROTENC_CLK) << 1) | (digitalRead(ROTENC_BUTTON) << 2); // Get current state
   
   	if (startState == stopState) { // Check if the state was stable
     	// Interpret rotor state
@@ -93,8 +89,10 @@ void ButtonHandler::setup() {
 
 	pinMode(ROTENC_DATA, INPUT);
 	pinMode(ROTENC_CLK, INPUT);
+	pinMode(ROTENC_BUTTON, INPUT);
 	digitalWrite(ROTENC_CLK, HIGH);
 	digitalWrite(ROTENC_DATA, HIGH);
+	digitalWrite(ROTENC_BUTTON, HIGH);
 }
 
 void ButtonHandler::update() {
@@ -107,15 +105,14 @@ void ButtonHandler::update() {
 
 	// Loop to read each bit value from the serial out line of the SN74HC165N.
 	for (uint8_t i = 0; i < DATA_WIDTH; i++) {
-		if (i < NUM_BUTTONS) {
+		// Menu button will be handled seperate
+		if (i < NUM_BUTTONS && i > 0) {
 			uint8_t state = digitalRead(PIN_BTN_DATAIN);
 			uint8_t button = NUM_BUTTONS - i - 1;
 
 			if (state != ButtonHandler::_lastButtonState[button]) {
 				ButtonHandler::_lastDebounceTime[button] = millis();
-			}
-
-			if ((millis() - ButtonHandler::_lastDebounceTime[button]) > DEBOUNCE_DELAY) {
+			} else if ((millis() - ButtonHandler::_lastDebounceTime[button]) > DEBOUNCE_DELAY) {
 				if (state != ButtonHandler::_buttonState[button]) {
 					ButtonHandler::_buttonState[button] = state;
 					ButtonHandler::_lastChangeTime[button] = millis();
@@ -144,6 +141,32 @@ void ButtonHandler::update() {
 		digitalWrite(PIN_BTN_CLK, LOW);
 	}
 
+	// Handle menu button
+	uint8_t state = digitalRead(ROTENC_BUTTON);
+	if (state != ButtonHandler::_lastButtonState[BUTTON_MENU]) {
+		ButtonHandler::_lastDebounceTime[BUTTON_MENU] = millis();
+	} else if ((millis() - ButtonHandler::_lastDebounceTime[BUTTON_MENU]) > DEBOUNCE_DELAY) {
+		if (state != ButtonHandler::_buttonState[BUTTON_MENU]) {
+			ButtonHandler::_buttonState[BUTTON_MENU] = state;
+			ButtonHandler::_lastChangeTime[BUTTON_MENU] = millis();
+			ButtonHandler::_hasChanged[BUTTON_MENU] = true;
+		} else {
+			ButtonHandler::_hasChanged[BUTTON_MENU] = false;
+		}
+	}
+
+	ButtonHandler::_lastButtonState[BUTTON_MENU] = state;
+
+	#ifdef DEBUG
+		if (ButtonHandler::isReleased(BUTTON_MENU)) {
+			debugPrintf(F("Button %d released"), BUTTON_MENU);
+		}
+
+		if (ButtonHandler::isPressed(BUTTON_MENU)) {
+			debugPrintf(F("Button %d pressed"), BUTTON_MENU);
+		}
+	#endif
+
 	ButtonHandler::_turn = TURN_NONE;
   	uint8_t encoderRead = ButtonHandler::_readEncoder();
   	if (encoderRead) {
@@ -165,6 +188,10 @@ bool ButtonHandler::isTurnedDown() {
 
 bool ButtonHandler::isUp(uint8_t button) {
 	return ButtonHandler::_buttonState[button] == BUTTON_STATE_UP;
+}
+
+bool ButtonHandler::isUp(uint8_t button, unsigned long forTime) {
+	
 }
 
 bool ButtonHandler::isDown(uint8_t button) {

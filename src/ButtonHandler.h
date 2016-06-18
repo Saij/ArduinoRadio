@@ -24,7 +24,9 @@ class ButtonHandler {
 		static void update();
 
 		static bool isUp(uint8_t button);
+		static bool isUp(uint8_t button, unsigned long forTime);
 		static bool isDown(uint8_t button);
+		static bool isDown(uint8_t button, unsigned long forTime);
 
 		static bool isReleased(uint8_t button);
 		static bool isPressed(uint8_t button);

@@ -1,10 +1,13 @@
 TODO
 ====
 
-- Repeated Button States (vor selecting a range of frequency)
+- Repeated Button States (for selecting a range of frequency)
 - Timed Button States
 - Presets
 - Show TA
 - Show RDS Active
 - Show Mono/Stereo/Blend
 - Implement Timeout in TunerHandler::_waitEnd
+- Rewrite digitalRead/digitalWrite (Refactor all Arduino out)
+- Rewrite LCD library
+- Implement own Serial Communication for Debug

@@ -9,7 +9,7 @@
 #define PIN_RESET A0
 #define PIN_SDIO  A4
 #define PIN_SCLK  A5
-#define PIN_MUTE   2
+#define PIN_MUTE   0
 
 #define REG_POWERCFG				0x02
 #define REG_POWERCFG_DSMUTE			0x8000

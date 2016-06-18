@@ -42,26 +42,21 @@ void StateMainDisplay::onEnter() {
 }
 
 void StateMainDisplay::update() {
-	uint16_t currentFrequency = TunerHandler::getFrequency();
+	/*uint16_t currentFrequency = TunerHandler::getFrequency();
 
 	// Change frequency
-	if (ButtonHandler::isReleased(BUTTON_FREQ_DOWN) && currentFrequency > FREQ_LIMIT_LOW) {
-		currentFrequency -= FREQ_SPACING;
-		TunerHandler::setFrequency(currentFrequency);
+	if (ButtonHandler::isRelesed(BUTTON_FREQ_DOWN) || ButtonHandler::isRelesed(BUTTON_FREQ_UP)) {
+		TunerHandler::setFrequency(this->_);
 	}
 
-	// Change frequency
-	if (ButtonHandler::isReleased(BUTTON_FREQ_UP) && currentFrequency < FREQ_LIMIT_HIGH) {
-		currentFrequency += FREQ_SPACING;
-		TunerHandler::setFrequency(currentFrequency);
-	}
+	if (ButtonHandler::isPressed(BUTTON_FREQ_UP) && currentFrequency)
 
 	if (currentFrequency != this->_curFrequency) {
 		// Frequency changed
 		this->_curFrequency = currentFrequency;	
 		SettingsHandler::setLastFrequency(currentFrequency);
 		this->_displayFrequency();
-	}
+	}*/
 
 	if (ButtonHandler::isTurnedUp() && this->_curVolume < MAX_VOLUME) {
 		this->_curVolume += 1;

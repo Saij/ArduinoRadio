@@ -1,26 +1,20 @@
-Display
-A1, 9, 8, 7, 6, 10
-
-Radio
-Standard
-
-D00 => AMP Mute
-D01 => Seriell
-D02 => RotEnc Button
-D03 => RotEnc Clk
-D04 => RotEnc Dt
-D05 => Helligkeit
-D06 => Display
-D07 => Display
-D08 => Display
-D09 => Display
-D10 => Display
-D11 => DataIn Button
-D12 => CS Buttons
-D13 => CLK Buttons
-A00 => Radio RST
-A01 => Display
-A02 => PL Buttons
-A03 => Powerstate
-A04 => Radio
-A05 => Radio
+D00 PD0 => AMP Mute (only with no DEBUG)
+D01 PD1 => Seriel (Debug Output)
+D02 PD2 => Rotary Encoder Button
+D03 PD3 => Rotary Encoder A
+D04 PD4 => Rotary Encoder B
+D05 PD5 => Display Brightness (PWM)
+D06 PD6 => Radio Reset
+D07 PD7 => Powerstate
+D08 PB0 => Display (RS)
+D09 PB1 => Display (EN)
+D10 PB2 => Display (DATA1)
+D11 PB3 => Display (DATA2)
+D12 PB4 => Display (DATA3)
+D13 PB5 => Display (DATA4)
+A00 PC0 => Buttons Clk
+A01 PC1 => Buttons Data
+A02 PC2 => Buttons Parallel Load
+A03 PC3 => Buttons ChipSelect
+A04 PC4 => Radio Data
+A05 PC5 => Radio Clk

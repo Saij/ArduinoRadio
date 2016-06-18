@@ -6,7 +6,7 @@
 
 #define SI4703_ADR 0x10
 
-#define PIN_RESET A0
+#define PIN_RESET 6
 #define PIN_SDIO  A4
 #define PIN_SCLK  A5
 #define PIN_MUTE   0

@@ -1,9 +1,9 @@
 #include "ButtonHandler.h"
 #include "Debug.h"
 
-#define PIN_BTN_DATAIN    	11
-#define PIN_BTN_CLKEN     	12
-#define PIN_BTN_CLK       	13
+#define PIN_BTN_DATAIN    	A1
+#define PIN_BTN_CLKEN     	A3
+#define PIN_BTN_CLK       	A0
 #define PIN_BTN_PLOAD     	A2
 
 #define NUM_74HC165       	1

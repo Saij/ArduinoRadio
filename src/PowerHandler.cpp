@@ -2,7 +2,7 @@
 #include "Debug.h"
 #include <Arduino.h>
 
-#define PIN_POWER A3
+#define PIN_POWER 7
 
 void PowerHandler::setup() {
   	debugPrintf(F("Initialize Power"));

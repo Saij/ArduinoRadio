@@ -1,10 +1,7 @@
 TODO
 ====
 
-- Rewrite LCD library
-- Rewrite digitalRead/digitalWrite
-- Implement own Serial Communication for Debug
-- Implement own TWI Communication
+- Optimize PinOut to support direct port access
 - Repeated Button States (for selecting a range of frequency)
 - Timed Button States
 - Presets
@@ -16,3 +13,6 @@ TODO
 - Menu
 - Seek
 - Implement Timeout in TunerHandler::_waitEnd
+- Rewrite digitalRead/digitalWrite (Refactor all Arduino out)
+- Rewrite LCD library
+- Implement own Serial Communication for Debug
